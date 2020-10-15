@@ -26,7 +26,7 @@ const Header = () => {
       <Container>
         <nav>
           <NavLink to="/" end >
-            <Logo>LOGO</Logo>
+            <Logo>PickPallet</Logo>
           </NavLink>
           
           <MenuIcon ref={ref} onClick={() => setActive(!active)}>
