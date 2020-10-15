@@ -15,6 +15,13 @@ export const ButtonStyled = styled.button`
   align-items: center;
   margin: 0 auto;
 
+  @media (min-width: 18.75rem) and (max-width: 75rem) {
+    line-height: 1rem;
+    margin-top: 0.3125rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4375rem;
+  }
+
   img {
     margin: 0rem 0.5rem;
   }
