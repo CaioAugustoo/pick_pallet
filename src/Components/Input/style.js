@@ -8,6 +8,10 @@ export const InputStyled = styled.input`
   border-top-left-radius: 0.3125rem;
   border-top-right-radius: 0.3125rem;
 
+  @media (min-width: 18.75rem) and (max-width: 25rem) {
+    width: 18.75rem;
+  }
+
   &::-webkit-color-swatch {
     border: 0px solid rgba(255, 255, 255, .0);
   }
