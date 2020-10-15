@@ -16,7 +16,7 @@ export const BoxPallet = styled.div`
   margin: 10px;
   transition: all .3s ease;
 
-  @media (min-width: 18.75rem) and (max-width: 25rem) {
+  @media (min-width: 18.75rem) and (max-width: 31.25rem) {
     opacity: 1;
     width: 7.575rem;
     height: 10.5rem;
@@ -29,14 +29,14 @@ export const PalletColors = styled.div`
   flex-direction: column;
   height: 250px;
 
-  @media (min-width: 18.75rem) and (max-width: 25rem) {
+  @media (min-width: 18.75rem) and (max-width: 31.25rem) {
     height: 9.3rem
   }
 
   div {
     height: 3.125rem;
 
-    @media (min-width: 18.75rem) and (max-width: 25rem) {
+    @media (min-width: 18.75rem) and (max-width: 31.25rem) {
       height: 2rem;
     }
 
@@ -55,7 +55,7 @@ export const PalletColors = styled.div`
       transition: all .2s ease;
       border: none;
 
-      @media (min-width: 18.75rem) and (max-width: 25rem) {
+      @media (min-width: 18.75rem) and (max-width: 31.25rem) {
         bottom: -0.1875rem;
         opacity: 0;
       }
@@ -81,7 +81,7 @@ export const PalletColors = styled.div`
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 
-    @media (min-width: 18.75rem) and (max-width: 25rem) {
+    @media (min-width: 18.75rem) and (max-width: 31.25rem) {
       height: 3rem;
     }
 
@@ -100,12 +100,12 @@ export const PalletColors = styled.div`
       transition: all .2s ease;
       border: none;
 
-      @media (min-width: 18.75rem) and (max-width: 25rem) {
+      @media (min-width: 18.75rem) and (max-width: 31.25rem) {
         bottom: -20px;
         opacity: 0;
       }
 
-      @media (min-width: 25.1rem) and (max-width: 75rem) {
+      @media (min-width: 31.2rem) and (max-width: 75rem) {
         bottom: -1.3125rem;
         opacity: 0;
       }
