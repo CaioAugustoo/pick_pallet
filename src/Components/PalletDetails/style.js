@@ -16,6 +16,10 @@ export const BoxPallet = styled.div`
   margin: 10px;
   transition: all .3s ease;
 
+  @media (min-width: 18.75rem) and (max-width: 75rem) {
+      height: 100%;
+    }
+
   button {
     margin-top: 15px;
   }
@@ -27,6 +31,10 @@ export const PalletColors = styled.div`
   flex-direction: column;
   div {
     height: 150px;
+
+    @media (min-width: 18.75rem) and (max-width: 75rem) {
+      height: 4.375rem;
+    }
 
     p {
       opacity: 0;
@@ -42,6 +50,11 @@ export const PalletColors = styled.div`
       cursor: pointer;
       transition: all .2s ease;
       border: none;
+      
+      @media (min-width: 18.75rem) and (max-width: 75rem) {
+        bottom: 1.75rem;
+        opacity: 1;
+      }
 
       &:hover {
         background: rgba(0, 0, 0, 0.2);
@@ -60,6 +73,10 @@ export const PalletColors = styled.div`
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 
+    @media (min-width: 18.75rem) and (max-width: 75rem) {
+      height: 6.25rem;
+    }
+
     p {
       opacity: 0;
       position: relative;
@@ -74,6 +91,11 @@ export const PalletColors = styled.div`
       cursor: pointer;
       transition: all .2s ease;
       border: none;
+
+      @media (min-width: 18.75rem) and (max-width: 75rem) {
+        bottom: -16.3125rem;
+        opacity: 1;
+      }
 
       &:hover {
         background: rgba(0, 0, 0, 0.2);
@@ -91,6 +113,10 @@ export const PalletColors = styled.div`
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 
+    @media (min-width: 18.75rem) and (max-width: 75rem) {
+      height: 3.125rem;
+    }
+
     p {
       opacity: 0;
       position: relative;
@@ -105,6 +131,11 @@ export const PalletColors = styled.div`
       cursor: pointer;
       transition: all .2s ease;
       border: none;
+
+      @media (min-width: 18.75rem) and (max-width: 75rem) {
+        bottom: 1.75rem;
+        opacity: 1;
+      }
 
       &:hover {
         background: rgba(0, 0, 0, 0.2);
