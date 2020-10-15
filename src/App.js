@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import About from './pages/About/About';
 import Create from './pages/Create/Create';
 import Home from './pages/Home/Home';
 import PalletDetail from './pages/PalletDetail/PalletDetail';
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/criar" element={<Create />} />
+        <Route path="/sobre" element={<About />} />
         <Route path="paleta/:id" element={<PalletDetail />} />
         <Route path="*" element={<Home />} />
       </Routes>
