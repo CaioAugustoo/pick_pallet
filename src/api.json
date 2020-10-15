@@ -1,0 +1,47 @@
+[
+  {
+    "id": "17420d11-c481-4a48-8737-ced49b6e302b",
+    "colors": {
+      "color1": "#f79071",
+      "color2": "#fa744f",
+      "color3": "#16817a",
+      "color4": "#024249"
+    }
+  },
+  {
+    "id": "17420d11-c481-4a48-8737-ced49b6e302a",
+    "colors": {
+      "color1": "#fa26a0",
+      "color2": "#d789d7",
+      "color3": "#5d54a4",
+      "color4": "#1a1c20"
+    }
+  },
+  {
+    "id": "17420d11-c481-4a48-8737-ced49b6e302c",
+    "colors": {
+      "color1": "#fcf9f9",
+      "color2": "#f1f864",
+      "color3": "#bceb3c",
+      "color4": "#7cbd1e"
+    }
+  },
+  {
+    "id": "17420d11-c481-4a48-8737-ced49b6e302d",
+    "colors": {
+      "color1": "#fd5e53",
+      "color2": "#f9fcfb",
+      "color3": "#b0eacd",
+      "color4": "#21bf73"
+    }
+  },
+  {
+    "id": "17420d11-c481-4a48-8737-ced49b6e302d",
+    "colors": {
+      "color1": "#a66dff",
+      "color2": "#986eff",
+      "color3": "#bdabff",
+      "color4": "#f1cdff"
+    }
+  }
+]
