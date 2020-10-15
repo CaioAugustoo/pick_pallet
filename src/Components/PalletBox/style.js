@@ -15,6 +15,12 @@ export const BoxPallet = styled.div`
   padding: 20px 15px;
   margin: 10px;
   transition: all .3s ease;
+
+  @media (min-width: 18.75rem) and (max-width: 25rem) {
+    opacity: 1;
+    width: 7.575rem;
+    height: 10.5rem;
+  }
 `;
 
 export const PalletColors = styled.div`
@@ -23,8 +29,16 @@ export const PalletColors = styled.div`
   flex-direction: column;
   height: 250px;
 
+  @media (min-width: 18.75rem) and (max-width: 25rem) {
+    height: 9.3rem
+  }
+
   div {
-    height: 50px;
+    height: 3.125rem;
+
+    @media (min-width: 18.75rem) and (max-width: 25rem) {
+      height: 2rem;
+    }
 
     p {
       opacity: 0;
@@ -41,8 +55,12 @@ export const PalletColors = styled.div`
       transition: all .2s ease;
       border: none;
 
-      @media (min-width: 18.75rem) and (max-width: 75rem) {
-        opacity: 1;
+      @media (min-width: 18.75rem) and (max-width: 25rem) {
+        bottom: -0.1875rem;
+        opacity: 0;
+      }
+
+      @media (min-width: 25.1rem) and (max-width: 75rem) {
         bottom: -1.3125rem;
       }
 
@@ -63,6 +81,10 @@ export const PalletColors = styled.div`
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 
+    @media (min-width: 18.75rem) and (max-width: 25rem) {
+      height: 3rem;
+    }
+
     p {
       opacity: 0;
       position: relative;
@@ -78,9 +100,14 @@ export const PalletColors = styled.div`
       transition: all .2s ease;
       border: none;
 
-      @media (min-width: 18.75rem) and (max-width: 75rem) {
-        opacity: 1;
-        bottom: -4.4375rem;
+      @media (min-width: 18.75rem) and (max-width: 25rem) {
+        bottom: -20px;
+        opacity: 0;
+      }
+
+      @media (min-width: 25.1rem) and (max-width: 75rem) {
+        bottom: -1.3125rem;
+        opacity: 0;
       }
 
       &:hover {
@@ -115,7 +142,7 @@ export const PalletColors = styled.div`
       border: none; 
       
       @media (min-width: 18.75rem) and (max-width: 75rem) {
-        opacity: 1;
+        opacity: 0;
         bottom: -0.375rem;
       }
 
