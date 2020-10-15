@@ -41,6 +41,11 @@ export const PalletColors = styled.div`
       transition: all .2s ease;
       border: none;
 
+      @media (min-width: 18.75rem) and (max-width: 75rem) {
+        opacity: 1;
+        bottom: -1.3125rem;
+      }
+
       &:hover {
         background: rgba(0, 0, 0, 0.2);
       }
@@ -73,6 +78,11 @@ export const PalletColors = styled.div`
       transition: all .2s ease;
       border: none;
 
+      @media (min-width: 18.75rem) and (max-width: 75rem) {
+        opacity: 1;
+        bottom: -4.4375rem;
+      }
+
       &:hover {
         background: rgba(0, 0, 0, 0.2);
       }
@@ -102,7 +112,12 @@ export const PalletColors = styled.div`
       color: var(--secondary-bg);
       cursor: pointer;
       transition: all .2s ease;
-      border: none;
+      border: none; 
+      
+      @media (min-width: 18.75rem) and (max-width: 75rem) {
+        opacity: 1;
+        bottom: -0.375rem;
+      }
 
       &:hover {
         background: rgba(0, 0, 0, 0.2);
