@@ -27,10 +27,10 @@ Para que este rode em sua máquina, siga os passos abaixo:
 
 ```bash
 # Clone o repositório em alguma pasta em sua máquina
-$ git clone https://github.com/CaioAugustoo/pick-pallet
+$ git clone https://github.com/CaioAugustoo/pick_pallet
 
 # Entre no repositório
-$ cd pick-pallet
+$ cd pick_pallet
 
 Instale as dependencias digitando no termimal:
 $ yarn install
