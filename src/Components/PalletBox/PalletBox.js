@@ -33,7 +33,7 @@ const PalletBox = () => {
         const pageScroll = window.scrollY;
         const pageHeight = document.body.offsetHeight - window.innerHeight;
         if (pageScroll > pageHeight * .85 && !wait) {
-          setLimit((limit) => limit * 2)
+          setLimit((limit) => limit + 18)
           wait = true;
           setTimeout(() => {
             wait = false;
