@@ -55,7 +55,9 @@ const Pallet = ({ pallets }) => {
                   buttonText="Detalhes"
                   onClick={() => navigate(`/paleta/${pallet.id}`)}
                 />
-                <Info>{new Date(pallet.createdAt).toLocaleDateString()}</Info>
+                <Info className="pallet__date">
+                  {new Date(pallet.createdAt).toLocaleDateString()}
+                </Info>
               </Wrap>
             </BoxPallet>
           </div>
