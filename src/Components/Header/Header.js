@@ -33,7 +33,12 @@ const Header = () => {
             •••
           </MenuIcon>
 
-          <Menu style={{ opacity: active ? "1" : "0" }}>
+          <Menu
+            style={{
+              opacity: active ? "1" : "0",
+              pointerEvents: active ? "initial" : "none",
+            }}
+          >
             <ul>
               <li>
                 <NavLink to="/" end activeStyle={activeStyle}>
