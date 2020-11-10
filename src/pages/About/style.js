@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
+
+const left = keyframes`
+  from {
+    opacity: 0
+    transform: translateX(-0.625rem);
+  } to {
+    opacity: 1;
+    transform: translateY(0rem)
+  }
+`;
 
 export const AboutSection = styled.section`
   display: flex;
@@ -15,6 +25,10 @@ export const AboutSection = styled.section`
 export const WhatIs = styled.div`
   margin: 4.375rem 0rem 1.875rem;
   max-width: 46.875rem;
+  animation: ${left} 0.4s ease;
+  animation-fill-mode: both;
+  opacity: 0;
+  transform: translateX(-0.625rem);
 
   p {
     padding: 1.875rem 0rem;
@@ -29,6 +43,10 @@ export const WhatIs = styled.div`
 export const ForWho = styled.div`
   margin: 1.25rem 0rem 1.875rem;
   max-width: 46.875rem;
+  animation: ${left} 0.4s ease;
+  animation-fill-mode: both;
+  opacity: 0;
+  transform: translateX(-0.625rem);
 
   p {
     padding: 30px 0px;
