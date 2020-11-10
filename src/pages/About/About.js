@@ -2,11 +2,13 @@ import React from 'react';
 import Header from '../../Components/Header/Header';
 import { AboutSection, WhatIs, ForWho } from './style';
 import { Container } from '../../style/GlobalStyle';
+import Head from "../../Components/Helper/Head/Head";
 
 const About = () => {
   return (
     <Container>
       <AboutSection>
+        <Head title="Sobre" /
         <Header />
 
         <h2>Sobre Pickpallet</h2>
