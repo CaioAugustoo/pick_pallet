@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   }
   
   button {
-    margin-top: 1.875rem;
+    margin: 1.875rem auto;
   }
 
   form div input {
