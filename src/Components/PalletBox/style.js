@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
+
+const item = keyframes`
+  from {
+    opacity: 0
+    transform: translateY(0.625rem);
+  } to {
+    opacity: 1;
+    transform: translateY(0rem)
+  }
+`;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,12 +24,22 @@ export const BoxPallet = styled.div`
   border-radius: 0.3125rem;
   padding: 20px 15px;
   margin: 10px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
+  animation: ${item} 0.4s ease;
+  animation-fill-mode: both;
+  opacity: 0;
+  transform: translateY(0.625rem);
 
   @media (min-width: 18.75rem) and (max-width: 31.25rem) {
     opacity: 1;
     width: 7.575rem;
     height: 10.5rem;
+  }
+
+  @media (max-width: 31.25rem) {
+    .pallet__date {
+      display: none;
+    }
   }
 `;
 
@@ -30,7 +50,7 @@ export const PalletColors = styled.div`
   height: 250px;
 
   @media (min-width: 18.75rem) and (max-width: 31.25rem) {
-    height: 9.3rem
+    height: 9.3rem;
   }
 
   div {
@@ -52,7 +72,7 @@ export const PalletColors = styled.div`
       border-radius: 2px;
       color: var(--secondary-bg);
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       border: none;
 
       @media (min-width: 18.75rem) and (max-width: 31.25rem) {
@@ -72,7 +92,7 @@ export const PalletColors = styled.div`
       p {
         opacity: 1;
       }
-    } 
+    }
   }
 
   div:first-child {
@@ -97,7 +117,7 @@ export const PalletColors = styled.div`
       border-radius: 2px;
       color: var(--secondary-bg);
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       border: none;
 
       @media (min-width: 18.75rem) and (max-width: 31.25rem) {
@@ -138,9 +158,9 @@ export const PalletColors = styled.div`
       border-radius: 2px;
       color: var(--secondary-bg);
       cursor: pointer;
-      transition: all .2s ease;
-      border: none; 
-      
+      transition: all 0.2s ease;
+      border: none;
+
       @media (min-width: 18.75rem) and (max-width: 75rem) {
         opacity: 0;
         bottom: -0.375rem;
@@ -155,5 +175,41 @@ export const PalletColors = styled.div`
         opacity: 1;
       }
     }
+  }
+`;
+
+export const Info = styled.div`
+  border-radius: 0.25rem;
+  padding: 0.4375rem 0.8125rem;
+  line-height: 1.25rem;
+  background: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: "poppins";
+  font-weight: 400;
+  display: flex;
+  font-size: 0.8333rem;
+  align-items: center;
+
+  @media (min-width: 18.75rem) and (max-width: 75rem) {
+    line-height: 1rem;
+    margin-top: 0.3125rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4375rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export const Wrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+
+  @media (max-width: 31.25rem) {
+    justify-content: center;
   }
 `;
