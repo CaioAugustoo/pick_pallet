@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Wrapper, BoxPallet, PalletColors } from "./style";
+import { Wrapper } from "./style";
 import { Container } from "../../style/GlobalStyle";
-import Button from "../Button/Button";
-import { useNavigate } from "react-router-dom";
+
 import Loading from "../Loading/Loading";
 import base_url from "../../services/api_url";
+import Pallet from "./Pallet";
 
 const PalletBox = () => {
   const [pallets, setPallets] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [limit, setLimit] = useState(18)
+  const [limit, setLimit] = useState(18);
   const [infinite, setInfinite] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const total = 18;
     setLoading(true);
+    const total = 18;
     const fetchAllPallets = async () => {
       const response = await fetch(`${base_url}?_limit=${limit}`);
       const json = await response.json();
@@ -32,80 +31,32 @@ const PalletBox = () => {
       if (infinite) {
         const pageScroll = window.scrollY;
         const pageHeight = document.body.offsetHeight - window.innerHeight;
-        if (pageScroll > pageHeight * .85 && !wait) {
-          setLimit((limit) => limit + 18)
+        if (pageScroll > pageHeight * 0.75 && !wait) {
+          setLimit(limit => limit + 18);
           wait = true;
           setTimeout(() => {
             wait = false;
-          }, 500)
+          }, 500);
         }
       }
-    }
+    };
 
-    window.addEventListener('wheel', infiniteScroll)
-    window.addEventListener('scroll', infiniteScroll)
+    window.addEventListener("wheel", infiniteScroll);
+    window.addEventListener("scroll", infiniteScroll);
     return () => {
-      window.removeEventListener('wheel', infiniteScroll)
-      window.removeEventListener('scroll', infiniteScroll)
-    }
-  })
+      window.removeEventListener("wheel", infiniteScroll);
+      window.removeEventListener("scroll", infiniteScroll);
+    };
+  });
 
   if (pallets === null) return null;
   return (
     <Container>
       <Wrapper>
         {loading && <Loading />}
-        {pallets.length !== undefined && pallets.map(pallet => (
-          <div key={pallet.id}>
-            <BoxPallet>
-              <PalletColors>
-                <div style={{ backgroundColor: `${pallet.pallet1}` }}>
-                  <p
-                    onClick={({ target }) =>
-                      navigator.clipboard.writeText(`${target.innerHTML}`)
-                    }
-                  >
-                    {pallet.pallet1}
-                  </p>
-                </div>
-                <div style={{ backgroundColor: `${pallet.pallet2}` }}>
-                  <p
-                    onClick={({ target }) =>
-                      navigator.clipboard.writeText(`${target.innerHTML}`)
-                    }
-                  >
-                    {pallet.pallet2}
-                  </p>
-                </div>
-                <div style={{ backgroundColor: `${pallet.pallet3}` }}>
-                  <p
-                    onClick={({ target }) =>
-                      navigator.clipboard.writeText(`${target.innerHTML}`)
-                    }
-                  >
-                    {pallet.pallet3}
-                  </p>
-                </div>
-                <div style={{ backgroundColor: `${pallet.pallet4}` }}>
-                  <p
-                    onClick={({ target }) =>
-                      navigator.clipboard.writeText(`${target.innerHTML}`)
-                    }
-                  >
-                    {pallet.pallet4}
-                  </p>
-                </div>
-              </PalletColors>
-              <Button
-                value={pallet.id}
-                buttonText="Detalhes"
-                onClick={() => navigate(`/paleta/${pallet.id}`)}
-              />
-            </BoxPallet>
-          </div>
-        ))}
+        {!loading && pallets !== null && <Pallet pallets={pallets} />}
       </Wrapper>
-    </Container >
+    </Container>
   );
 };
 
