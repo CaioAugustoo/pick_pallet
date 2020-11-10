@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import firebase from "../../config/firebase";
 import { Wrapper } from "./style";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
+import base_url from "../../services/api_url";
 
 const NewPalletBox = () => {
   const [firstColor, setFirstColor] = useState("#EEEEEE");
@@ -13,23 +13,24 @@ const NewPalletBox = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const postPallet = (e) => {
-    setLoading(true);
+  const postPallet = async e => {
     e.preventDefault();
-    firebase
-      .firestore()
-      .collection("pallets")
-      .doc()
-      .set({
-        color1: firstColor,
-        color2: secondColor,
-        color3: thirdColor,
-        color4: fourthColor,
-      })
-      .then(() => {
-        setLoading(false);
-        navigate("/");
-      });
+    setLoading(true);
+    const response = await fetch(base_url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pallet1: firstColor,
+        pallet2: secondColor,
+        pallet3: thirdColor,
+        pallet4: fourthColor,
+      }),
+    });
+    setLoading(false);
+    const json = await response.json();
+    navigate(`/paleta/${json.id}`);
   };
 
   return (
@@ -58,7 +59,7 @@ const NewPalletBox = () => {
 
         <Button
           type="submit"
-          buttonText={loading ? 'Carregando...' : 'Pronto!'}
+          buttonText={loading ? "Carregando..." : "Pronto!"}
           disabled={loading ? true : false}
         />
       </form>
