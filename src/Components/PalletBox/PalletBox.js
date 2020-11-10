@@ -29,11 +29,12 @@ const PalletBox = () => {
 
   useEffect(() => {
     let wait = false;
+
     const infiniteScroll = () => {
       if (infinite) {
-        const pageScroll = window.scrollY;
-        const pageHeight = document.body.offsetHeight - window.innerHeight;
-        if (pageScroll > pageHeight * 0.75 && !wait) {
+        const scroll = window.scrollY;
+        const height = document.body.offsetHeight - window.innerHeight;
+        if (scroll > height * 0.85 && !wait) {
           setLimit(limit => limit + 18);
           wait = true;
           setTimeout(() => {
@@ -49,7 +50,7 @@ const PalletBox = () => {
       window.removeEventListener("wheel", infiniteScroll);
       window.removeEventListener("scroll", infiniteScroll);
     };
-  });
+  }, [infinite, pallets]);
 
   if (pallets === null) return null;
   return (
