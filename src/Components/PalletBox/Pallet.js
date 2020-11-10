@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
-import { BoxPallet, PalletColors } from "./style";
+import { BoxPallet, PalletColors, Info, Wrap } from "./style";
 
 const Pallet = ({ pallets }) => {
   const navigate = useNavigate();
@@ -49,11 +49,14 @@ const Pallet = ({ pallets }) => {
                   </p>
                 </div>
               </PalletColors>
-              <Button
-                value={pallet.id}
-                buttonText="Detalhes"
-                onClick={() => navigate(`/paleta/${pallet.id}`)}
-              />
+              <Wrap>
+                <Button
+                  value={pallet.id}
+                  buttonText="Detalhes"
+                  onClick={() => navigate(`/paleta/${pallet.id}`)}
+                />
+                <Info>{new Date(pallet.createdAt).toLocaleDateString()}</Info>
+              </Wrap>
             </BoxPallet>
           </div>
         ))}
