@@ -16,7 +16,9 @@ const PalletBox = () => {
     setLoading(true);
     const total = 18;
     const fetchAllPallets = async () => {
-      const response = await fetch(`${base_url}?_limit=${limit}`);
+      const response = await fetch(
+        `${base_url}?_limit=${limit}&_sort=published_at%3ADESC`
+      );
       const json = await response.json();
       if (response.ok && json.length < total) setInfinite(false);
       setPallets(json);
