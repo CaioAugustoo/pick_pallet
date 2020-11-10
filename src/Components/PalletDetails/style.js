@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,11 +14,11 @@ export const BoxPallet = styled.div`
   border-radius: 0.3125rem;
   padding: 20px 15px;
   margin: 10px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
   @media (min-width: 18.75rem) and (max-width: 75rem) {
-      height: 100%;
-    }
+    height: 100%;
+  }
 
   button {
     margin-top: 15px;
@@ -48,9 +48,9 @@ export const PalletColors = styled.div`
       border-radius: 2px;
       color: var(--secondary-bg);
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       border: none;
-      
+
       @media (min-width: 18.75rem) and (max-width: 75rem) {
         bottom: 1.75rem;
         opacity: 1;
@@ -64,7 +64,7 @@ export const PalletColors = styled.div`
       p {
         opacity: 1;
       }
-    } 
+    }
   }
 
   div:first-child {
@@ -89,7 +89,7 @@ export const PalletColors = styled.div`
       border-radius: 2px;
       color: var(--secondary-bg);
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       border: none;
 
       @media (min-width: 18.75rem) and (max-width: 75rem) {
@@ -129,7 +129,7 @@ export const PalletColors = styled.div`
       border-radius: 2px;
       color: var(--secondary-bg);
       cursor: pointer;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       border: none;
 
       @media (min-width: 18.75rem) and (max-width: 75rem) {
@@ -149,3 +149,42 @@ export const PalletColors = styled.div`
   }
 `;
 
+export const Info = styled.div`
+  border-radius: 0.25rem;
+  padding: 0.4375rem 0.8125rem;
+  line-height: 1.25rem;
+  background: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: "poppins";
+  font-weight: 400;
+  display: flex;
+  font-size: 0.8333rem;
+  align-items: center;
+
+  @media (min-width: 18.75rem) and (max-width: 75rem) {
+    line-height: 1rem;
+    margin-top: 0.3125rem;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4375rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+`;
+
+export const Wrap = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: center;
+
+  div {
+    margin-top: 15px;
+  }
+`;
