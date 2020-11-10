@@ -13,7 +13,6 @@ export const ButtonStyled = styled.button`
   font-weight: 400;
   display: flex;
   align-items: center;
-  margin: 0 auto;
 
   @media (min-width: 18.75rem) and (max-width: 75rem) {
     line-height: 1rem;
