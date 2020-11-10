@@ -1,5 +1,5 @@
 import React from "react";
-import { BoxPallet, PalletColors } from "./style";
+import { BoxPallet, PalletColors, Info, Wrap } from "./style";
 import Button from "../Button/Button";
 
 const Pallet = ({ pallet, id }) => {
@@ -43,12 +43,15 @@ const Pallet = ({ pallet, id }) => {
           </p>
         </div>
       </PalletColors>
-      <Button
-        buttonText="Link"
-        onClick={({ target }) =>
-          navigator.clipboard.writeText(`pickpallet.netlify.app/paleta/${id}`)
-        }
-      />
+      <Wrap>
+        <Button
+          buttonText="Link"
+          onClick={() =>
+            navigator.clipboard.writeText(`pickpallet.netlify.app/paleta/${id}`)
+          }
+        />
+        <Info>{new Date(pallet.createdAt).toLocaleDateString()}</Info>
+      </Wrap>
     </BoxPallet>
   );
 };
