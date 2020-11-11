@@ -6,20 +6,22 @@ Resumidamente, este projeto é um "clone" de ColorHunt. Ambas web app's possuem 
 Qualquer usuário pode criar qualquer paleta, visualizar qualquer paleta, e até mesmo copiar o link da paleta através de um simples botão e copiar, também,
 cada cor de cada paleta, basta clicar no hexadecimal de cada cor. 
 
+A API foi desenvolvida por mim através do Strapi.
+
 ## ✨ Demonstração
 Veja abaixo uma foto do projeto.
-[![Image from Gyazo](https://i.gyazo.com/c112e98a6c6a2c7af2ab0c50f2df281c.png)](https://gyazo.com/c112e98a6c6a2c7af2ab0c50f2df281c)
+[![Image from Gyazo](https://i.gyazo.com/1dacde168921ef5d5484405f125cf9c0.png)](https://gyazo.com/1dacde168921ef5d5484405f125cf9c0)
 
 Você pode conferir o resultado final em: https://pickpallet.netlify.app
 
 ## 🎯 Objetivo do projeto
-Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos com React e Firebase/Firestore.
+Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos com React e API com Strapi.
 
 ## 📝 Tecnologias 
 Para a realização desse projeto foi utilizado as seguintes tecnologias/linguagens: 
 - [ReactJS](https://pt-br.reactjs.org) para criação da interface
 - [styled-components](https://styled-components.com) para a estilização
-- [Firebase/Firestore](https://firebase.google.com/?hl=pt-br) para utilização de NoSQL
+- [API](https://pickpalletapi.herokuapp.com/pallets) para a listagem de paletas
 - [React Router](https://reactrouter.com/web/guides/quick-start) para gerenciarmos as rotas
 
 ## ⚙️ Instalação
