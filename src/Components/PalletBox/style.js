@@ -90,7 +90,7 @@ export const PalletColors = styled.div`
     }
     &:hover {
       p {
-        opacity: 1;
+        opacity: 0;
       }
     }
   }
@@ -136,7 +136,7 @@ export const PalletColors = styled.div`
     }
     &:hover {
       p {
-        opacity: 1;
+        opacity: 0;
       }
     }
   }
@@ -172,7 +172,7 @@ export const PalletColors = styled.div`
     }
     &:hover {
       p {
-        opacity: 1;
+        opacity: 0;
       }
     }
   }
