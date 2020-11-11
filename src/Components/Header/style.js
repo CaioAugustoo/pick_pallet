@@ -36,7 +36,7 @@ export const Menu = styled.div`
   box-shadow: var(--secondary-shadow);
   position: fixed;
   z-index: 10000;
-  right: 0;
+  right:  0;
   top: 4.1875rem;
   padding: 0.625rem 1.25rem;
   border-bottom-left-radius: 0.1875rem;
