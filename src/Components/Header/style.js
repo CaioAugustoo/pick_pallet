@@ -34,9 +34,9 @@ export const MenuIcon = styled.span`
 export const Menu = styled.div`
   background: var(--secondary-bg);
   box-shadow: var(--secondary-shadow);
-  position: absolute;
+  position: fixed;
   z-index: 10000;
-  right: 3.75rem;
+  right: 0;
   top: 4.1875rem;
   padding: 0.625rem 1.25rem;
   border-bottom-left-radius: 0.1875rem;
