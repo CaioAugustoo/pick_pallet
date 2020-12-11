@@ -41,11 +41,8 @@ const Pallet = ({ pallet, id }) => {
         </div>
       </PalletColors>
       <Wrap>
-        <Button
-          buttonText="Link"
-          onClick={({ target }) => copyLinkToClipBoard()}
-        />
-        <Info>{new Date(pallet.createdAt).toLocaleDateString()}</Info>
+        <Button buttonText="Link" onClick={() => copyLinkToClipBoard()} />
+        <Info>{new Date(pallet.created_at).toLocaleDateString()}</Info>
       </Wrap>
       <Toastify
         isToastyfied={isToastyfied}
