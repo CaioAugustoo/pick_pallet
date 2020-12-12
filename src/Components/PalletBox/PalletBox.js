@@ -109,7 +109,7 @@ const Pallet = () => {
                     onClick={() => navigate(`/paleta/${pallet.id}`)}
                   />
                   <Info className="pallet__date">
-                    {new Date(pallet.created_at).toLocaleDateString()}
+                    {new Date(pallet.createdAt).toLocaleDateString()}
                   </Info>
                 </Wrap>
               </BoxPallet>
