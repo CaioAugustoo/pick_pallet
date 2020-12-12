@@ -1,2 +1,2 @@
-const base_url = "https://pickpallet.herokuapp.com/pallets";
+const base_url = "https://pickpalletapi.herokuapp.com/pallets";
 export default base_url;
