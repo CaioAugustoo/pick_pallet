@@ -4,7 +4,6 @@ import Head from "../../Components/Helper/Head/Head";
 import PalletBox from '../../Components/PalletBox/PalletBox'
 
 const Home = () => {
-  document.title = 'Pick Pallet | Uma coleção de paletas';
   return (
     <div>
       <Head title="Paletas" />
