@@ -20,7 +20,7 @@ export const StyledToastify = styled.div`
   font-family: sans-serif;
   flex-direction: column;
   transform: translateY(120%);
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s;
   animation-fill-mode: both;
   opacity: 0;
 
