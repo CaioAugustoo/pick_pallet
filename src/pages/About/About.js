@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../Components/Header/Header";
-import { AboutSection, WhatIs, ForWho } from "./style";
+import { AboutSection, WhatIs, ForWho, ForDevs } from "./style";
 import { Container } from "../../style/GlobalStyle";
 import Head from "../../Components/Helper/Head/Head";
 
@@ -11,16 +11,16 @@ const About = () => {
         <Head title="Sobre" />
         <Header />
 
-        <h2>Sobre Pickpallet</h2>
+        <h2>Sobre PickPallet</h2>
 
         <WhatIs>
-          <h1>O que é Pickpallet?</h1>
+          <h1>O que é PickPallet?</h1>
           <p>
-            Pickpallet é um site com coleções de paletas criadas por vocês,
-            usuários. Pickpallet é, também um clone do ColorHunt. Pickpallet foi
+            PickPallet é um site com coleções de paletas criadas por vocês,
+            usuários. PickPallet é, também um clone do ColorHunt. PickPallet foi
             desenvolvido por{" "}
             <a
-              href="https://github.com/CaioAugustoo"
+              href="https://www.instagram.com/iamcaio_a/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -35,11 +35,36 @@ const About = () => {
         <ForWho>
           <h1>Feito para quem?</h1>
           <p>
-            Pickpallet foi desenvolvido para ajudar os designers e artistas que,
+            PickPallet foi desenvolvido para ajudar os designers e artistas que,
             muitas vezes, não possuem ideias ou paletas de cores para aplicarem
             à seus projetos.
           </p>
         </ForWho>
+
+        <ForDevs>
+          <h1>Desenvolvedores</h1>
+          <p>
+            O PickPallet é um projeto open source, você pode
+            <a
+              href="https://github.com/CaioAugustoo/pick_pallet"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              contribuir para o projeto no Github
+            </a>
+            . Caso você queira utilizar a{" "}
+            <a
+              href="https://pickpalletapi.herokuapp.com/pallets"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              nossa API
+            </a>
+            , você pode utilizá-la livremente em seus projetos com os métodos{" "}
+            <strong>POST</strong> e<strong> GET</strong>.
+          </p>
+        </ForDevs>
       </AboutSection>
     </Container>
   );
