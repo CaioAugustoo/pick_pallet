@@ -5,11 +5,11 @@ import PalletBox from '../../Components/PalletBox/PalletBox'
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Head title="Paletas" />
       <Header />
       <PalletBox />
-    </div>
+    </>
   );
 };
 
