@@ -17,50 +17,40 @@ const Pallets = ({ pallets }) => {
     <>
       {pallets.map(
         ({ id, pallet1, pallet2, pallet3, pallet4, createdAt }, index) => (
-          <div key={id}>
-            <BoxPallet style={{ animationDelay: `${index * 5}ms` }}>
-              <PalletColors>
-                <div style={{ backgroundColor: `${pallet1}` }}>
-                  <p
-                    onClick={({ target }) => copyToClipBoard(target.innerHTML)}
-                  >
-                    {pallet1}
-                  </p>
-                </div>
-                <div style={{ backgroundColor: `${pallet2}` }}>
-                  <p
-                    onClick={({ target }) => copyToClipBoard(target.innerHTML)}
-                  >
-                    {pallet2}
-                  </p>
-                </div>
-                <div style={{ backgroundColor: `${pallet3}` }}>
-                  <p
-                    onClick={({ target }) => copyToClipBoard(target.innerHTML)}
-                  >
-                    {pallet3}
-                  </p>
-                </div>
-                <div style={{ backgroundColor: `${pallet4}` }}>
-                  <p
-                    onClick={({ target }) => copyToClipBoard(target.innerHTML)}
-                  >
-                    {pallet4}
-                  </p>
-                </div>
-              </PalletColors>
-              <Wrap>
-                <Button
-                  value={id}
-                  buttonText="Detalhes"
-                  onClick={() => navigate(`/paleta/${id}`)}
-                />
-                <Info className="pallet__date">
-                  {new Date(createdAt).toLocaleDateString()}
-                </Info>
-              </Wrap>
-            </BoxPallet>
-          </div>
+          <BoxPallet style={{ animationDelay: `${index * 5}ms` }} key={id}>
+            <PalletColors>
+              <div style={{ backgroundColor: `${pallet1}` }}>
+                <p onClick={({ target }) => copyToClipBoard(target.innerHTML)}>
+                  {pallet1}
+                </p>
+              </div>
+              <div style={{ backgroundColor: `${pallet2}` }}>
+                <p onClick={({ target }) => copyToClipBoard(target.innerHTML)}>
+                  {pallet2}
+                </p>
+              </div>
+              <div style={{ backgroundColor: `${pallet3}` }}>
+                <p onClick={({ target }) => copyToClipBoard(target.innerHTML)}>
+                  {pallet3}
+                </p>
+              </div>
+              <div style={{ backgroundColor: `${pallet4}` }}>
+                <p onClick={({ target }) => copyToClipBoard(target.innerHTML)}>
+                  {pallet4}
+                </p>
+              </div>
+            </PalletColors>
+            <Wrap>
+              <Button
+                value={id}
+                buttonText="Detalhes"
+                onClick={() => navigate(`/paleta/${id}`)}
+              />
+              <Info className="pallet__date">
+                {new Date(createdAt).toLocaleDateString()}
+              </Info>
+            </Wrap>
+          </BoxPallet>
         )
       )}
       <Toastify
