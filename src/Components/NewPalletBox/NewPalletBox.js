@@ -29,7 +29,7 @@ const NewPalletBox = () => {
       }),
     });
     setLoading(false);
-    const json = await response.json();
+    const { id } = await response.json();
     navigate(`/paleta/${json.id}`);
   };
 
