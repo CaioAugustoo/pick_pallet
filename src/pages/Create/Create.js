@@ -5,11 +5,11 @@ import Head from "../../Components/Helper/Head/Head";
 
 const Create = () => {
   return (
-    <div>
+    <>
       <Head title="Criar paleta" />
       <Header />
       <NewPalletBox />
-    </div>
+    </>
   );
 };
 
