@@ -30,7 +30,7 @@ const NewPalletBox = () => {
     });
     setLoading(false);
     const { id } = await response.json();
-    navigate(`/paleta/${json.id}`);
+    navigate(`/paleta/${id}`);
   };
 
   return (
