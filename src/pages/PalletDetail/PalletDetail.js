@@ -5,11 +5,11 @@ import PalletDetails from "../../Components/PalletDetails/PalletDetails";
 
 const PalletDetail = () => {
   return (
-    <div>
+    <>
       <Head title="Detalhes" />
       <Header />
       <PalletDetails />
-    </div>
+    </>
   );
 };
 
