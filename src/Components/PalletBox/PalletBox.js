@@ -1,22 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "../Button/Button";
-import Toastify from "../Toastify/Toastify";
-import { BoxPallet, PalletColors, Info, Wrap, Wrapper } from "./style";
+
+import { Wrapper } from "./style";
 import base_url from "../../services/api_url";
 import { Container } from "../../style/GlobalStyle";
+import Pallets from "./Pallets";
 
 const Pallet = () => {
-  const navigate = useNavigate();
-  const [isToastyfied, setIsToastifyied] = useState(false);
   const [pallets, setPallets] = useState(null);
   const [limit, setLimit] = useState(18);
   const [infinite, setInfinite] = useState(true);
-
-  const copyToClipBoard = target => {
-    navigator.clipboard.writeText(`${target}`);
-    setIsToastifyied(true);
-  };
 
   useEffect(() => {
     const total = 18;
@@ -59,69 +51,10 @@ const Pallet = () => {
   return (
     <Container>
       <Wrapper>
-        {pallets !== null &&
-          pallets.length !== undefined &&
-          pallets.map((pallet, index) => (
-            <div key={pallet.id}>
-              <BoxPallet style={{ animationDelay: `${index * 5}ms` }}>
-                <PalletColors>
-                  <div style={{ backgroundColor: `${pallet.pallet1}` }}>
-                    <p
-                      onClick={({ target }) =>
-                        copyToClipBoard(target.innerHTML)
-                      }
-                    >
-                      {pallet.pallet1}
-                    </p>
-                  </div>
-                  <div style={{ backgroundColor: `${pallet.pallet2}` }}>
-                    <p
-                      onClick={({ target }) =>
-                        copyToClipBoard(target.innerHTML)
-                      }
-                    >
-                      {pallet.pallet2}
-                    </p>
-                  </div>
-                  <div style={{ backgroundColor: `${pallet.pallet3}` }}>
-                    <p
-                      onClick={({ target }) =>
-                        copyToClipBoard(target.innerHTML)
-                      }
-                    >
-                      {pallet.pallet3}
-                    </p>
-                  </div>
-                  <div style={{ backgroundColor: `${pallet.pallet4}` }}>
-                    <p
-                      onClick={({ target }) =>
-                        copyToClipBoard(target.innerHTML)
-                      }
-                    >
-                      {pallet.pallet4}
-                    </p>
-                  </div>
-                </PalletColors>
-                <Wrap>
-                  <Button
-                    value={pallet.id}
-                    buttonText="Detalhes"
-                    onClick={() => navigate(`/paleta/${pallet.id}`)}
-                  />
-                  <Info className="pallet__date">
-                    {new Date(pallet.createdAt).toLocaleDateString()}
-                  </Info>
-                </Wrap>
-              </BoxPallet>
-            </div>
-          ))}
+        {pallets !== null && pallets.length !== undefined && (
+          <Pallets pallets={pallets} />
+        )}
       </Wrapper>
-
-      <Toastify
-        isToastyfied={isToastyfied}
-        setIsToastifyied={setIsToastifyied}
-        toastifyText="😎 Copiado!"
-      />
     </Container>
   );
 };
