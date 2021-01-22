@@ -24,10 +24,9 @@ const Pallet = () => {
       if (response.ok && json.length < total) setInfinite(false);
       setPallets(json);
     };
-    console.log(loading);
     fetchAllPallets();
     setLoading(false);
-  }, [limit, loading]);
+  }, [limit]);
 
   useEffect(() => {
     let wait = false;
