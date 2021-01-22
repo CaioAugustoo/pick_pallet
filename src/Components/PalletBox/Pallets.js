@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
-import { BoxPallet, PalletColors, Info, Wrap } from "./style";
+import { BoxPallet, PalletColors, PostedAt, Wrap } from "./style";
 import Toastify from "../Toastify/Toastify";
 
 const Pallets = ({ pallets }) => {
@@ -46,9 +46,12 @@ const Pallets = ({ pallets }) => {
                 buttonText="Detalhes"
                 onClick={() => navigate(`/paleta/${id}`)}
               />
-              <Info className="pallet__date">
+              <PostedAt
+                className="pallet__date"
+                title={`Criada em: ${new Date(createdAt).toLocaleDateString()}`}
+              >
                 {new Date(createdAt).toLocaleDateString()}
-              </Info>
+              </PostedAt>
             </Wrap>
           </BoxPallet>
         )

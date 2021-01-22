@@ -5,12 +5,16 @@ import base_url from "../../services/api_url";
 import { Container } from "../../style/GlobalStyle";
 import Pallets from "./Pallets";
 
+import Loading from "../Loading/Loading";
+
 const Pallet = () => {
   const [pallets, setPallets] = useState(null);
   const [limit, setLimit] = useState(18);
   const [infinite, setInfinite] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const total = 18;
     const fetchAllPallets = async () => {
       const response = await fetch(
@@ -20,8 +24,10 @@ const Pallet = () => {
       if (response.ok && json.length < total) setInfinite(false);
       setPallets(json);
     };
+    console.log(loading);
     fetchAllPallets();
-  }, [limit]);
+    setLoading(false);
+  }, [limit, loading]);
 
   useEffect(() => {
     let wait = false;
@@ -48,10 +54,11 @@ const Pallet = () => {
     };
   }, [infinite, pallets]);
 
+  if (loading) return <Loading />;
   return (
     <Container>
       <Wrapper>
-        {pallets !== null && pallets.length !== undefined && (
+        {pallets !== null && pallets.length !== undefined && !loading && (
           <Pallets pallets={pallets} />
         )}
       </Wrapper>

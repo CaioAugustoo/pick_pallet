@@ -20,20 +20,26 @@ export const Wrapper = styled.div`
 export const BoxPallet = styled.div`
   width: 230px;
   height: 280px;
+
   box-shadow: var(--box-shadow);
   border-radius: 0.3125rem;
+
   padding: 20px 15px;
   margin: 10px;
+
   transition: all 0.3s ease;
   animation: ${item} 0.4s ease;
   animation-fill-mode: both;
+
   opacity: 0;
   transform: translateY(0.625rem);
 
-  @media (min-width: 18.75rem) and (max-width: 31.25rem) {
+  @media (min-width: 300px) and (max-width: 500px) {
     opacity: 1;
     width: 7.575rem;
-    height: 10.5rem;
+    height: 9rem;
+
+    padding: 10px 10px;
   }
 
   @media (max-width: 31.25rem) {
@@ -49,167 +55,80 @@ export const PalletColors = styled.div`
   flex-direction: column;
   height: 250px;
 
-  @media (min-width: 18.75rem) and (max-width: 31.25rem) {
-    height: 9.3rem;
+  @media (min-width: 300px) and (max-width: 500px) {
+    height: auto;
   }
 
   div {
     height: 3.125rem;
+    position: relative;
 
-    @media (min-width: 18.75rem) and (max-width: 31.25rem) {
-      height: 2rem;
+    @media (min-width: 300px) and (max-width: 500px) {
+      height: 1.5rem;
+    }
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      height: 100px;
+
+      @media (min-width: 300px) and (max-width: 500px) {
+        height: 3rem;
+      }
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      height: 35px;
+
+      @media (min-width: 300px) and (max-width: 500px) {
+        height: 20px;
+      }
     }
 
     p {
+      position: absolute;
+      bottom: 0;
+
       opacity: 0;
-      position: relative;
-      bottom: -21px;
       text-transform: uppercase;
-      width: 80px;
-      padding: 2px 5px;
-      background: rgba(0, 0, 0, 0.1);
-      letter-spacing: 1px;
-      border-radius: 2px;
-      color: var(--secondary-bg);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: none;
+      color: white;
 
-      @media (min-width: 18.75rem) and (max-width: 31.25rem) {
-        bottom: -0.1875rem;
-        opacity: 0;
-      }
+      transition: all 0.3s ease;
+      padding: 2px 0px 0 0px;
 
-      @media (min-width: 25.1rem) and (max-width: 75rem) {
-        bottom: -1.3125rem;
-      }
-
-      &:hover {
-        background: rgba(0, 0, 0, 0.2);
+      @media (min-width: 300px) and (max-width: 500px) {
+        font-size: 0.8rem;
       }
     }
+
     &:hover {
       p {
         opacity: 1;
-      }
-    }
-  }
-
-  div:first-child {
-    width: 100%;
-    height: 100px;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-
-    @media (min-width: 18.75rem) and (max-width: 31.25rem) {
-      height: 3rem;
-    }
-
-    p {
-      opacity: 0;
-      position: relative;
-      bottom: -71px;
-      text-transform: uppercase;
-      width: 76px;
-      padding: 2px 5px;
-      background: rgba(0, 0, 0, 0.1);
-      letter-spacing: 1px;
-      border-radius: 2px;
-      color: var(--secondary-bg);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: none;
-
-      @media (min-width: 18.75rem) and (max-width: 31.25rem) {
-        bottom: -20px;
-        opacity: 0;
-      }
-
-      @media (min-width: 31.2rem) and (max-width: 75rem) {
-        bottom: -1.3125rem;
-        opacity: 0;
-      }
-
-      &:hover {
         background: rgba(0, 0, 0, 0.2);
-      }
-    }
-    &:hover {
-      p {
-        opacity: 1;
-      }
-    }
-  }
-  div:last-child {
-    width: 100%;
-    height: 35px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-
-    p {
-      opacity: 0;
-      position: relative;
-      bottom: -6px;
-      text-transform: uppercase;
-      width: 76px;
-      padding: 2px 5px;
-      background: rgba(0, 0, 0, 0.1);
-      letter-spacing: 1px;
-      border-radius: 2px;
-      color: var(--secondary-bg);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: none;
-
-      @media (min-width: 18.75rem) and (max-width: 75rem) {
-        opacity: 0;
-        bottom: -0.375rem;
-      }
-
-      &:hover {
-        background: rgba(0, 0, 0, 0.2);
-      }
-    }
-    &:hover {
-      p {
-        opacity: 1;
+        padding: 2px 5px 0 5px;
+        border-radius: 0 2px 2px 0px;
       }
     }
   }
 `;
 
-export const Info = styled.div`
-  border-radius: 0.25rem;
-  padding: 0.4375rem 0.8125rem;
-  line-height: 1.25rem;
-  background: #fff;
-  transition: all 0.3s ease;
-  outline: none;
-  font-family: "poppins";
-  font-weight: 400;
-  display: flex;
-  font-size: 0.8333rem;
-  align-items: center;
+export const PostedAt = styled.p`
+  font-size: 0.8rem;
 
-  @media (min-width: 18.75rem) and (max-width: 75rem) {
-    line-height: 1rem;
-    margin-top: 0.3125rem;
+  @media (min-width: 300px) and (max-width: 1200px) {
     font-size: 0.7rem;
-    padding: 0.25rem 0.4375rem;
-  }
-
-  &:hover {
-    opacity: 0.8;
   }
 `;
 
 export const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 10px;
   align-items: center;
 
   @media (max-width: 31.25rem) {
     justify-content: center;
+    margin-top: 5px;
   }
 `;

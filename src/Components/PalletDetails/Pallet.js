@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BoxPallet, PalletColors, Info, Wrap } from "./style";
+import { BoxPallet, PalletColors, PostedAt, Wrap } from "./style";
 import Button from "../Button/Button";
 import Toastify from "../Toastify/Toastify";
 
@@ -16,6 +16,7 @@ const Pallet = ({ pallet, id }) => {
     setIsToastifyied(true);
   };
 
+  if (pallet === null) return null;
   return (
     <BoxPallet>
       <PalletColors>
@@ -42,7 +43,13 @@ const Pallet = ({ pallet, id }) => {
       </PalletColors>
       <Wrap>
         <Button buttonText="Link" onClick={() => copyLinkToClipBoard()} />
-        <Info>{new Date(pallet.createdAt).toLocaleDateString()}</Info> 
+        <PostedAt
+          title={`Criada em: ${new Date(
+            pallet.createdAt
+          ).toLocaleDateString()}`}
+        >
+          {new Date(pallet.createdAt).toLocaleDateString()}
+        </PostedAt>
       </Wrap>
       <Toastify
         isToastyfied={isToastyfied}

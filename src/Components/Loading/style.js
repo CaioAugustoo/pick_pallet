@@ -1,9 +1,9 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const dots = keyframes`
   0% {
-    opacity: 0;
-    transform: scale(0);
+    opacity: 0.5;
+    transform: scale(0.5);
   }
   50% {
     opacity: 1;
@@ -13,7 +13,7 @@ const dots = keyframes`
     opacity: 0;
     transform: scale(0);
   }
-`
+`;
 
 export const PreLoader = styled.div`
   position: absolute;
@@ -26,7 +26,7 @@ export const PreLoader = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   overflow: hidden;
   pointer-events: none;
   display: flex;
@@ -49,7 +49,7 @@ export const MidDot = styled.div`
   height: 0.9375rem;
   border-radius: 6.25rem;
   animation: 2s ${dots} ease infinite;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
   margin: 0rem 0.625rem;
   animation-fill-mode: backwards;
 `;
@@ -61,6 +61,6 @@ export const RightDot = styled.div`
   border-radius: 6.25rem;
   z-index: 1000;
   animation: 2s ${dots} ease infinite;
-  animation-delay: .6s;
+  animation-delay: 0.6s;
   animation-fill-mode: backwards;
 `;

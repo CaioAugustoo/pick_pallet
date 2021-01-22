@@ -9,7 +9,7 @@ import Pallet from "../PalletDetails/Pallet";
 
 const PalletDetails = () => {
   const [pallet, setPallet] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -27,12 +27,10 @@ const PalletDetails = () => {
     };
   }, [id]);
 
-  if (pallet === null) return null;
-
+  if (loading) return <Loading />;
   return (
     <Container>
       <Wrapper>
-        {loading && <Loading />}
         {!loading && pallet !== null && <Pallet pallet={pallet} id={id} />}
       </Wrapper>
     </Container>

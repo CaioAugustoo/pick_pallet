@@ -1,12 +1,12 @@
-import React from 'react';
-import { PreLoader, LeftDot, MidDot, RightDot } from './style';
+import React from "react";
+import { PreLoader, LeftDot, MidDot, RightDot } from "./style";
 
 const Loading = () => {
   return (
     <PreLoader>
-      <LeftDot/>
-      <MidDot/>
-      <RightDot/>
+      <LeftDot />
+      <MidDot />
+      <RightDot />
     </PreLoader>
   );
 };
