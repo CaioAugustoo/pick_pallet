@@ -36,8 +36,8 @@ export const BoxPallet = styled.div`
 
   @media (min-width: 300px) and (max-width: 500px) {
     opacity: 1;
-    width: 7.575rem;
-    height: 9rem;
+    width: 8rem;
+    height: 9.5rem;
 
     padding: 10px 10px;
   }
@@ -64,7 +64,7 @@ export const PalletColors = styled.div`
     position: relative;
 
     @media (min-width: 300px) and (max-width: 500px) {
-      height: 1.5rem;
+      height: 1.8rem;
     }
 
     &:first-child {
