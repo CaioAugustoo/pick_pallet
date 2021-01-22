@@ -89,6 +89,7 @@ export const PalletColors = styled.div`
 
 export const PostedAt = styled.p`
   font-size: 0.8rem;
+  margin-left: 10px;
 
   @media (min-width: 300px) and (max-width: 1200px) {
     font-size: 0.7rem;
