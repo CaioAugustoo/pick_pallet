@@ -15,7 +15,7 @@ const Pallet = () => {
 
   useEffect(() => {
     setLoading(true);
-    const total = 18;
+    const total = 12;
     const fetchAllPallets = async () => {
       const response = await fetch(
         `${base_url}?_limit=${limit}&_sort=published_at%3ADESC`
@@ -35,7 +35,7 @@ const Pallet = () => {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.85 && !wait) {
-          setLimit(limit => limit + 18);
+          setLimit(limit => limit + 10);
           wait = true;
           setTimeout(() => {
             wait = false;
