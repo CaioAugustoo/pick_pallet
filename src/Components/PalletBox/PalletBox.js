@@ -30,9 +30,8 @@ const Pallet = () => {
 
   useEffect(() => {
     let wait = false;
-
     const infiniteScroll = () => {
-      if (infinite) {
+      if (infinite && limit <= pallets.length) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.85 && !wait) {
@@ -51,7 +50,7 @@ const Pallet = () => {
       window.removeEventListener("wheel", infiniteScroll);
       window.removeEventListener("scroll", infiniteScroll);
     };
-  }, [infinite, pallets]);
+  }, [infinite, limit, pallets]);
 
   if (loading) return <Loading />;
   return (
