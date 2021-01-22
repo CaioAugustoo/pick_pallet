@@ -97,6 +97,8 @@ export const PalletColors = styled.div`
       text-transform: uppercase;
       color: white;
 
+      cursor: pointer;
+
       transition: all 0.3s ease;
       padding: 2px 0px 0 0px;
 
