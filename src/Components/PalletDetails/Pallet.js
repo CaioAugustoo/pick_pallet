@@ -16,7 +16,6 @@ const Pallet = ({ pallet, id }) => {
     setIsToastifyied(true);
   };
 
-  if (pallet === null) return null;
   return (
     <BoxPallet>
       <PalletColors>
