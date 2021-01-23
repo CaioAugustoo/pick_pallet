@@ -16,7 +16,7 @@ const Pallets = ({ pallets }) => {
   return (
     <>
       {pallets.map(
-        ({ id, pallet1, pallet2, pallet3, pallet4, createdAt }, index) => (
+        ({ id, pallet1, pallet2, pallet3, pallet4, created_at }, index) => (
           <BoxPallet style={{ animationDelay: `${index * 5}ms` }} key={id}>
             <PalletColors>
               <div style={{ backgroundColor: `${pallet1}` }}>
@@ -48,9 +48,11 @@ const Pallets = ({ pallets }) => {
               />
               <PostedAt
                 className="pallet__date"
-                title={`Criada em: ${new Date(createdAt).toLocaleDateString()}`}
+                title={`Criada em: ${new Date(
+                  created_at
+                ).toLocaleDateString()}`}
               >
-                {new Date(createdAt).toLocaleDateString()}
+                {new Date(created_at).toLocaleDateString()}
               </PostedAt>
             </Wrap>
           </BoxPallet>

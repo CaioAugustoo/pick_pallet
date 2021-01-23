@@ -12,7 +12,7 @@ const Pallet = ({ pallet, id }) => {
   };
 
   const copyLinkToClipBoard = () => {
-    navigator.clipboard.writeText(`pickpallet.netlify.app/paleta/${id}`);
+    navigator.clipboard.writeText(`${window.location.hostname}/paleta/${id}`);
     setIsToastifyied(true);
   };
 
@@ -45,10 +45,10 @@ const Pallet = ({ pallet, id }) => {
         <Button buttonText="Link" onClick={() => copyLinkToClipBoard()} />
         <PostedAt
           title={`Criada em: ${new Date(
-            pallet.createdAt
+            pallet.created_at
           ).toLocaleDateString()}`}
         >
-          {new Date(pallet.createdAt).toLocaleDateString()}
+          {new Date(pallet.created_at).toLocaleDateString()}
         </PostedAt>
       </Wrap>
       <Toastify
