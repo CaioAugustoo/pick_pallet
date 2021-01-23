@@ -12,7 +12,7 @@ A API foi desenvolvida por mim através do Strapi.
 Veja abaixo uma foto do projeto.
 [![Image from Gyazo](https://i.gyazo.com/1dacde168921ef5d5484405f125cf9c0.png)](https://gyazo.com/1dacde168921ef5d5484405f125cf9c0)
 
-Você pode conferir o resultado final em: https://pickpallet.netlify.app
+Você pode conferir o resultado final em: https://pick-pallet.vercel.app
 
 ## 🎯 Objetivo do projeto
 Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos com React e API com Strapi.
