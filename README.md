@@ -21,7 +21,7 @@ Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos 
 Para a realização desse projeto foi utilizado as seguintes tecnologias/linguagens: 
 - [ReactJS](https://pt-br.reactjs.org) para criação da interface
 - [styled-components](https://styled-components.com) para a estilização
-- [API](https://pickpalletapi.herokuapp.com/pallets) para a listagem de paletas
+- [API](https://pickpalletv2.herokuapp.com/pallets) para a listagem de paletas
 - [React Router](https://reactrouter.com/web/guides/quick-start) para gerenciarmos as rotas
 
 ## ⚙️ Instalação
