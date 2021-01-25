@@ -6,7 +6,7 @@ Resumidamente, este projeto é um "clone" de ColorHunt. Ambas web app's possuem 
 Qualquer usuário pode criar qualquer paleta, visualizar qualquer paleta, e até mesmo copiar o link da paleta através de um simples botão e copiar, também,
 cada cor de cada paleta, basta clicar no hexadecimal de cada cor. 
 
-A API foi desenvolvida por mim através do Strapi.
+A API foi desenvolvida por mim.
 
 ## ✨ Demonstração
 Veja abaixo uma foto do projeto.
@@ -21,7 +21,7 @@ Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos 
 Para a realização desse projeto foi utilizado as seguintes tecnologias/linguagens: 
 - [ReactJS](https://pt-br.reactjs.org) para criação da interface
 - [styled-components](https://styled-components.com) para a estilização
-- [API](https://pickpalletv2.herokuapp.com/pallets) para a listagem de paletas
+- [API](https://caiohtml.com/pickpallet/json/api/pallets) para a listagem de paletas
 - [React Router](https://reactrouter.com/web/guides/quick-start) para gerenciarmos as rotas
 
 ## ⚙️ Instalação
