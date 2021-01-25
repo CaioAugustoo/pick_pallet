@@ -1,2 +1,3 @@
-const base_url = "https://pickpalletv2.herokuapp.com/pallets";
+const base_url = "https://caiohtml.com/pickpallet/json/api/pallets";
+
 export default base_url;

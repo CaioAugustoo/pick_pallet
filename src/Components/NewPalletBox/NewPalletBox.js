@@ -29,8 +29,10 @@ const NewPalletBox = () => {
       }),
     });
     setLoading(false);
-    const { id } = await response.json();
-    navigate(`/paleta/${id}`);
+
+    // Return id of the created pallet
+    const json = await response.json();
+    navigate(`/paleta/${json}`);
   };
 
   return (
