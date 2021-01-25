@@ -55,7 +55,7 @@ const About = () => {
             </a>
             . Caso você queira utilizar a{" "}
             <a
-              href="https://pickpalletv2.herokuapp.com/pallets"
+              href="https://caiohtml.com/pickpallet/json/api/pallets"
               target="_blank"
               rel="noopener noreferrer"
             >
