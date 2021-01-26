@@ -16,15 +16,19 @@ const Pallet = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let isMounted = true;
     const fetchAllPallets = async () => {
       setLoading(true);
       const response = await fetch(`${base_url}?_total=${total}`);
       const json = await response.json();
       if (response.ok && json.length < total) setInfinite(false);
-      setPallets(json);
+      if (isMounted) setPallets(json);
       setLoading(false);
     };
     fetchAllPallets();
+    return () => {
+      isMounted = false;
+    };
   }, [total]);
 
   useEffect(() => {
