@@ -14,15 +14,15 @@ const PalletDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    setLoading(true);
     let isMounted = true;
     const fetchPalletDetailsById = async () => {
+      setLoading(true);
       const response = await fetch(`${base_url}/${id}`);
       const json = await response.json();
       if (isMounted) setPallet(json);
+      setLoading(false);
     };
     fetchPalletDetailsById();
-    setLoading(false);
     return () => {
       isMounted = false;
     };

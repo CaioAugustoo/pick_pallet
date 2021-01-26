@@ -2,11 +2,11 @@ import styled, { keyframes } from "styled-components";
 
 const dots = keyframes`
   0% {
-    opacity: 0.5;
-    transform: scale(0.5);
+    opacity: 0;
+    transform: scale(0);
   }
   50% {
-    opacity: 1;
+    opacity: 0.5;
     transform: scale(1);
   }
   100% {
@@ -20,8 +20,8 @@ export const PreLoader = styled.div`
   background: var(--secondary-bg);
   width: 100%;
   height: 100%;
-  z-index: 100000;
-  opacity: 1;
+  z-index: 1;
+  opacity: 0.5;
   top: 0;
   left: 0;
   bottom: 0;
