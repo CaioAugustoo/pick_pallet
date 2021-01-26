@@ -43,11 +43,11 @@ const Pallet = ({ pallet, id }) => {
       <Wrap>
         <Button buttonText="Link" onClick={() => copyLinkToClipBoard()} />
         <PostedAt
-          title={`Criada em: ${new Date(
-            pallet.created_at
-          ).toLocaleDateString()}`}
+          title={`Criada em: ${new Date(pallet.created_at).toLocaleDateString(
+            "pt-br"
+          )}`}
         >
-          {new Date(pallet.created_at).toLocaleDateString()}
+          {new Date(pallet.created_at).toLocaleDateString("pt-br")}
         </PostedAt>
       </Wrap>
       <Toastify

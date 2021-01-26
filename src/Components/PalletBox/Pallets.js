@@ -48,11 +48,11 @@ const Pallets = ({ pallets }) => {
               />
               <PostedAt
                 className="pallet__date"
-                title={`Criada em: ${new Date(
-                  created_at
-                ).toLocaleDateString()}`}
+                title={`Criada em: ${new Date(created_at).toLocaleDateString(
+                  "pt-br"
+                )}`}
               >
-                {new Date(created_at).toLocaleDateString()}
+                {new Date(created_at).toLocaleDateString("pt-br")}
               </PostedAt>
             </Wrap>
           </BoxPallet>
