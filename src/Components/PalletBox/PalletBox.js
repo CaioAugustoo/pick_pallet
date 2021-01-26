@@ -4,7 +4,6 @@ import { Wrapper } from "./style";
 import base_url from "../../services/api_url";
 import { Container } from "../../style/GlobalStyle";
 
-import Loading from "../Loading/Loading";
 import NotFound404 from "../Helper/NotFound/NotFound";
 
 import Pallets from "./Pallets";
@@ -13,17 +12,14 @@ const Pallet = () => {
   const [pallets, setPallets] = useState(null);
   const [total, setTotal] = useState(18);
   const [infinite, setInfinite] = useState(true);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
     const fetchAllPallets = async () => {
-      setLoading(true);
       const response = await fetch(`${base_url}?_total=${total}`);
       const json = await response.json();
       if (response.ok && json.length < total) setInfinite(false);
       if (isMounted) setPallets(json);
-      setLoading(false);
     };
     fetchAllPallets();
     return () => {
@@ -55,17 +51,14 @@ const Pallet = () => {
     };
   }, [infinite, pallets]);
 
-  if (loading) return <Loading />;
   if (pallets === null) return null;
   return (
     <Container>
-      {!loading && pallets.code === 404 && <NotFound404 />}
-      {!loading && pallets.code === "rest_no_route" && <NotFound404 />}
-      {!loading && (
-        <Wrapper>
-          <Pallets pallets={pallets} />
-        </Wrapper>
-      )}
+      {pallets.code === 404 && <NotFound404 />}
+      {pallets.code === "rest_no_route" && <NotFound404 />}
+      <Wrapper>
+        <Pallets pallets={pallets} />
+      </Wrapper>
     </Container>
   );
 };
