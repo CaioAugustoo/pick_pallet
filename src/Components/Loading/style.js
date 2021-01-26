@@ -6,7 +6,7 @@ const dots = keyframes`
     transform: scale(0);
   }
   50% {
-    opacity: 0.5;
+    opacity: 1;
     transform: scale(1);
   }
   100% {
