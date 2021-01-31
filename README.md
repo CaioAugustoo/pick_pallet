@@ -15,13 +15,13 @@ Veja abaixo uma foto do projeto.
 Você pode conferir o resultado final em: https://pick-pallet.vercel.app
 
 ## 🎯 Objetivo do projeto
-Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos com React e API com Strapi.
+Foi realizado este projeto com o intuito de aplicar os conhecimentos adquiridos com React.
 
 ## 📝 Tecnologias 
 Para a realização desse projeto foi utilizado as seguintes tecnologias/linguagens: 
 - [ReactJS](https://pt-br.reactjs.org) para criação da interface
 - [styled-components](https://styled-components.com) para a estilização
-- [API](https://caiohtml.com/pickpallet/json/api/pallets) para a listagem de paletas
+- [API](https://github.com/CaioAugustoo/pickpallet_api) para a listagem de paletas
 - [React Router](https://reactrouter.com/web/guides/quick-start) para gerenciarmos as rotas
 
 ## ⚙️ Instalação
