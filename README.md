@@ -6,7 +6,7 @@ Resumidamente, este projeto é um "clone" de ColorHunt. Ambas web app's possuem 
 Qualquer usuário pode criar qualquer paleta, visualizar qualquer paleta, e até mesmo copiar o link da paleta através de um simples botão e copiar, também,
 cada cor de cada paleta, basta clicar no hexadecimal de cada cor. 
 
-A API foi desenvolvida por mim.
+A [API](https://github.com/CaioAugustoo/pickpallet_api) foi desenvolvida por mim.
 
 ## ✨ Demonstração
 Veja abaixo uma foto do projeto.
