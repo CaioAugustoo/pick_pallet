@@ -16,6 +16,7 @@ export const AboutSection = styled.section`
   align-items: center;
   margin-top: 6.25rem;
   flex-direction: column;
+  padding: 0 35px;
 
   h2 {
     font-weight: 500;
