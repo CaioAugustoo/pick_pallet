@@ -11,15 +11,25 @@ const item = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px 0 35px 0;
 `;
 
 export const BoxPallet = styled.div`
+  width: 230px;
+  height: 280px;
+
   box-shadow: var(--box-shadow);
   border-radius: 0.3125rem;
 
   padding: 20px 15px;
-  margin: 75px 15px 0 15px;
+
+  @media (max-width: 500px) and (min-width: 300px) {
+    margin: 5px;
+  }
+  margin: 10px;
 
   transition: all 0.3s ease;
   animation: ${item} 0.4s ease;
@@ -28,38 +38,55 @@ export const BoxPallet = styled.div`
   opacity: 0;
   transform: translateY(0.625rem);
 
-  @media (min-width: 300px) and (max-width: 1200px) {
-    height: 100%;
+  @media (min-width: 300px) and (max-width: 500px) {
+    opacity: 1;
+    width: 8rem;
+    height: 9.5rem;
+  }
+
+  @media (max-width: 31.25rem) {
+    .pallet__date {
+      display: none;
+    }
   }
 `;
 
 export const PalletColors = styled.div`
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+
+  @media (min-width: 300px) and (max-width: 500px) {
+    height: auto;
+  }
+
   div {
-    height: 150px;
+    height: 3.125rem;
     position: relative;
+
+    @media (min-width: 300px) and (max-width: 500px) {
+      height: 2.1rem;
+    }
 
     &:first-child {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
-      height: 300px;
+      height: 100px;
 
       @media (min-width: 300px) and (max-width: 500px) {
-        height: 6.25rem;
+        height: 3rem;
       }
     }
 
     &:last-child {
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
-      height: 100px;
+      height: 35px;
 
       @media (min-width: 300px) and (max-width: 500px) {
-        height: 3.125rem;
+        height: 20px;
       }
-    }
-
-    @media (min-width: 300px) and (max-width: 1200px) {
-      height: 4.375rem;
     }
 
     p {
@@ -74,6 +101,10 @@ export const PalletColors = styled.div`
 
       transition: all 0.3s ease;
       padding: 2px 0px 0 0px;
+
+      @media (min-width: 300px) and (max-width: 500px) {
+        font-size: 0.8rem;
+      }
     }
 
     &:hover {
@@ -89,7 +120,6 @@ export const PalletColors = styled.div`
 
 export const PostedAt = styled.p`
   font-size: 0.8rem;
-  margin-left: 10px;
 
   @media (min-width: 300px) and (max-width: 1200px) {
     font-size: 0.7rem;
@@ -98,7 +128,11 @@ export const PostedAt = styled.p`
 
 export const Wrap = styled.div`
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 15px;
+
+  @media (max-width: 31.25rem) {
+    justify-content: center;
+    margin-top: 5px;
+  }
 `;

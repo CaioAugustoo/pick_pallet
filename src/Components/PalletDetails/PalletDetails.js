@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Wrapper } from "./style";
 import { Container } from "../../style/GlobalStyle";
 import Pallet from "../PalletDetails/Pallet";
+
 import Loading from "../Loading/Loading";
 
 import base_url from "../../services/api_url";
