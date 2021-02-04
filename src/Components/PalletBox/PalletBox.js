@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import { Wrapper } from "./style";
 import { Container } from "../../style/GlobalStyle";
-import base_url from "../../services/api_url";
-
-import NotFound404 from "../Helper/NotFound/NotFound";
 import Pallets from "./Pallets";
+
+import base_url from "../../services/api_url";
 
 const Pallet = () => {
   const [pallets, setPallets] = useState(null);
@@ -55,8 +54,6 @@ const Pallet = () => {
   if (pallets === null) return null;
   return (
     <Container>
-      {pallets.code === 404 && <NotFound404 />}
-      {pallets.code === "rest_no_route" && <NotFound404 />}
       <Wrapper>
         <Pallets pallets={pallets} />
       </Wrapper>

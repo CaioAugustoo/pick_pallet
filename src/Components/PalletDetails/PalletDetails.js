@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { Wrapper } from "./style";
-
 import { Container } from "../../style/GlobalStyle";
-import NotFound404 from "../Helper/NotFound/NotFound";
-
-import Loading from "../Loading/Loading";
-import base_url from "../../services/api_url";
 import Pallet from "../PalletDetails/Pallet";
+import Loading from "../Loading/Loading";
+
+import base_url from "../../services/api_url";
 
 const PalletDetails = () => {
   const [pallet, setPallet] = useState(null);
@@ -37,13 +35,9 @@ const PalletDetails = () => {
   return (
     <Container>
       <>
-        {!loading && pallet.code === 404 && <NotFound404 />}
-        {!loading && pallet.code === "rest_no_route" && <NotFound404 />}
-        {!loading && (
-          <Wrapper>
-            <Pallet pallet={pallet} id={id} />
-          </Wrapper>
-        )}
+        <Wrapper>
+          <Pallet pallet={pallet} id={id} />
+        </Wrapper>
       </>
     </Container>
   );

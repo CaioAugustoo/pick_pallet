@@ -5,6 +5,7 @@ import ptBR from "date-fns/locale/pt-BR";
 import { BoxPallet, PalletColors, PostedAt, Wrap } from "./style";
 import Button from "../Button/Button";
 import Toastify from "../Toastify/Toastify";
+import NotFound404 from "../Helper/NotFound/NotFound";
 
 const Pallet = ({ pallet, id }) => {
   const [isToastyfied, setIsToastifyied] = useState(false);
@@ -19,6 +20,8 @@ const Pallet = ({ pallet, id }) => {
     setIsToastifyied(true);
   };
 
+  if (pallet.code === 404) return <NotFound404 />;
+  if (pallet.code === "rest_no_route") return <NotFound404 />;
   return (
     <BoxPallet>
       <PalletColors>

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import { BoxPallet, PalletColors, PostedAt, Wrap } from "./style";
 import Toastify from "../Toastify/Toastify";
+import NotFound404 from "../Helper/NotFound/NotFound";
 
 const Pallets = ({ pallets }) => {
   const [isToastyfied, setIsToastifyied] = useState(false);
@@ -16,6 +17,8 @@ const Pallets = ({ pallets }) => {
     setIsToastifyied(true);
   };
 
+  if (pallets.code === 404) return <NotFound404 />;
+  if (pallets.code === "rest_no_route") return <NotFound404 />;
   return (
     <>
       {pallets.map(
