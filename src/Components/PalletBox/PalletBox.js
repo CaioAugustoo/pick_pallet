@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import { Wrapper } from "./style";
-import base_url from "../../services/api_url";
 import { Container } from "../../style/GlobalStyle";
+import base_url from "../../services/api_url";
 
 import NotFound404 from "../Helper/NotFound/NotFound";
-
 import Pallets from "./Pallets";
 
 const Pallet = () => {

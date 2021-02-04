@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { formatDistanceToNowStrict } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
 import { useNavigate } from "react-router-dom";
+
 import Button from "../Button/Button";
 import { BoxPallet, PalletColors, PostedAt, Wrap } from "./style";
 import Toastify from "../Toastify/Toastify";
@@ -44,15 +47,20 @@ const Pallets = ({ pallets }) => {
               <Button
                 value={id}
                 buttonText="Detalhes"
-                onClick={() => navigate(`/paleta/${id}`)}
+                onClick={() => navigate(`/pallet/${id}`)}
               />
               <PostedAt
                 className="pallet__date"
-                title={`Criada em: ${new Date(created_at).toLocaleDateString(
-                  "pt-br"
-                )}`}
+                title={`Criada há ${formatDistanceToNowStrict(
+                  new Date(created_at),
+                  {
+                    locale: ptBR,
+                  }
+                )} atrás`}
               >
-                {new Date(created_at).toLocaleDateString("pt-br")}
+                {formatDistanceToNowStrict(new Date(created_at), {
+                  locale: ptBR,
+                })}
               </PostedAt>
             </Wrap>
           </BoxPallet>

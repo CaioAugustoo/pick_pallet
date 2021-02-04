@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+
 import { Container } from "../../style/GlobalStyle";
 import { HeaderStyled, Logo, MenuIcon, Menu } from "./style";
 
@@ -11,7 +12,7 @@ const Header = () => {
     opacity: "0.5",
   };
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = event => {
     if (ref.current && !ref.current.contains(event.target)) setActive(false);
   };
 
@@ -25,10 +26,10 @@ const Header = () => {
     <HeaderStyled>
       <Container>
         <nav>
-          <NavLink to="/" end >
+          <NavLink to="/" end>
             <Logo>PickPallet</Logo>
           </NavLink>
-          
+
           <MenuIcon ref={ref} onClick={() => setActive(!active)}>
             •••
           </MenuIcon>
@@ -46,12 +47,12 @@ const Header = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/criar" end activeStyle={activeStyle}>
+                <NavLink to="/create" end activeStyle={activeStyle}>
                   Criar
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/sobre" activeStyle={activeStyle}>
+                <NavLink to="/about" activeStyle={activeStyle}>
                   Sobre
                 </NavLink>
               </li>

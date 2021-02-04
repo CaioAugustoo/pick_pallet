@@ -13,9 +13,9 @@ const App = () => {
         <GlobalStyle />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/criar" element={<Create />} />
-          <Route path="/sobre" element={<About />} />
-          <Route path="paleta/:id" element={<PalletDetail />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/about" element={<About />} />
+          <Route path="pallet/:id" element={<PalletDetail />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>

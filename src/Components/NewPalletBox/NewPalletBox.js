@@ -32,7 +32,7 @@ const NewPalletBox = () => {
 
     // Return id of the created pallet
     const json = await response.json();
-    navigate(`/paleta/${json}`);
+    navigate(`/pallet/${json}`);
   };
 
   return (

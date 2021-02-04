@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { formatDistanceToNowStrict } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
+
 import { BoxPallet, PalletColors, PostedAt, Wrap } from "./style";
 import Button from "../Button/Button";
 import Toastify from "../Toastify/Toastify";
@@ -43,11 +46,16 @@ const Pallet = ({ pallet, id }) => {
       <Wrap>
         <Button buttonText="Link" onClick={() => copyLinkToClipBoard()} />
         <PostedAt
-          title={`Criada em: ${new Date(pallet.created_at).toLocaleDateString(
-            "pt-br"
-          )}`}
+          title={`Criada há ${formatDistanceToNowStrict(
+            new Date(pallet.created_at),
+            {
+              locale: ptBR,
+            }
+          )} atrás`}
         >
-          {new Date(pallet.created_at).toLocaleDateString("pt-br")}
+          {formatDistanceToNowStrict(new Date(pallet.created_at), {
+            locale: ptBR,
+          })}
         </PostedAt>
       </Wrap>
       <Toastify
