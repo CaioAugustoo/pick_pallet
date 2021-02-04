@@ -15,7 +15,9 @@ const Pallet = () => {
   useEffect(() => {
     let isMounted = true;
     const fetchAllPallets = async () => {
-      const response = await fetch(`${base_url}?_total=${total}`);
+      const response = await fetch(`${base_url}?_total=${total}`, {
+        cache: "no-store",
+      });
       const json = await response.json();
       if (response.ok && json.length < total) setInfinite(false);
       if (isMounted) setPallets(json);

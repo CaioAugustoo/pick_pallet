@@ -45,17 +45,13 @@ const Pallet = ({ pallet, id }) => {
       </PalletColors>
       <Wrap>
         <Button buttonText="Link" onClick={() => copyLinkToClipBoard()} />
-        <PostedAt
-          title={`Criada há ${formatDistanceToNowStrict(
-            new Date(pallet.created_at),
+        <PostedAt>
+          {formatDistanceToNowStrict(
+            Date.parse(pallet.created_at.replace(/-/g, "/")),
             {
               locale: ptBR,
             }
-          )} atrás`}
-        >
-          {formatDistanceToNowStrict(new Date(pallet.created_at), {
-            locale: ptBR,
-          })}
+          )}
         </PostedAt>
       </Wrap>
       <Toastify

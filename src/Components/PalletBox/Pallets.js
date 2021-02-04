@@ -49,18 +49,13 @@ const Pallets = ({ pallets }) => {
                 buttonText="Detalhes"
                 onClick={() => navigate(`/pallet/${id}`)}
               />
-              <PostedAt
-                className="pallet__date"
-                title={`Criada há ${formatDistanceToNowStrict(
-                  new Date(created_at),
+              <PostedAt className="pallet__date">
+                {formatDistanceToNowStrict(
+                  Date.parse(created_at.replace(/-/g, "/")),
                   {
                     locale: ptBR,
                   }
-                )} atrás`}
-              >
-                {formatDistanceToNowStrict(new Date(created_at), {
-                  locale: ptBR,
-                })}
+                )}
               </PostedAt>
             </Wrap>
           </BoxPallet>

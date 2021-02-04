@@ -19,7 +19,9 @@ const PalletDetails = () => {
     let isMounted = true;
     const fetchPalletDetailsById = async () => {
       setLoading(true);
-      const response = await fetch(`${base_url}/${id}`);
+      const response = await fetch(`${base_url}/${id}`, {
+        cache: "no-store",
+      });
       const json = await response.json();
       if (isMounted) setPallet(json);
       setLoading(false);
