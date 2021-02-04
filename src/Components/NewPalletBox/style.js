@@ -27,6 +27,10 @@ export const Wrapper = styled.div`
   div {
     width: 370px;
     margin: 0 auto;
+
+    @media (min-width: 18.75rem) and (max-width: 25rem) {
+      width: 18.75rem;
+    }
   }
 
   h3 {
