@@ -21,7 +21,7 @@ export const BoxPallet = styled.div`
   border-radius: 0.3125rem;
 
   padding: 20px 15px;
-  margin-top: 75px;
+  margin: 75px 15px 0 15px;
 
   transition: all 0.3s ease;
   animation: ${item} 0.4s ease;
