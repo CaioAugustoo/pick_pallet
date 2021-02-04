@@ -1,12 +1,8 @@
-import React from 'react';
-import { InputStyled } from './style';
+import React from "react";
+import { InputStyled } from "./style";
 
-const Input = ({color, ...rest}) => {
-  return (
-    <div>
-      <InputStyled type="color" name="color" id="color" {...rest} />
-    </div>
-  );
+const Input = ({ color, ...rest }) => {
+  return <InputStyled type="color" name="color" id="color" {...rest} />;
 };
 
 export default Input;

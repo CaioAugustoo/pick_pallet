@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const InputStyled = styled.input`
   outline: 0;
@@ -10,9 +10,5 @@ export const InputStyled = styled.input`
 
   @media (min-width: 18.75rem) and (max-width: 25rem) {
     width: 18.75rem;
-  }
-
-  &::-webkit-color-swatch {
-    border: 0px solid rgba(255, 255, 255, .0);
   }
 `;

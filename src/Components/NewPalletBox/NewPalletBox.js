@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Wrapper } from "./style";
+import {
+  Wrapper,
+  FirstColorPallet,
+  SecondColorPallet,
+  ThirdColorPallet,
+  FourthColorPallet,
+} from "./style";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
@@ -39,25 +45,30 @@ const NewPalletBox = () => {
     <Wrapper>
       <h3>Crie uma paleta!</h3>
       <form onSubmit={postPallet}>
-        <Input
-          value={firstColor}
-          onChange={({ target }) => setFirstColor(target.value)}
-        />
-        <Input
-          style={{ marginTop: "-0.1875rem" }}
-          value={secondColor}
-          onChange={({ target }) => setsecondColor(target.value)}
-        />
-        <Input
-          style={{ marginTop: "-0.5rem", height: "5.625rem" }}
-          value={thirdColor}
-          onChange={({ target }) => setThirdColor(target.value)}
-        />
-        <Input
-          style={{ marginTop: "-1.875rem", height: "4.375rem" }}
-          value={fourthColor}
-          onChange={({ target }) => setFourthColor(target.value)}
-        />
+        <FirstColorPallet color1={firstColor}>
+          <Input
+            value={firstColor}
+            onChange={({ target }) => setFirstColor(target.value)}
+          />
+        </FirstColorPallet>
+        <SecondColorPallet color2={secondColor}>
+          <Input
+            value={secondColor}
+            onChange={({ target }) => setsecondColor(target.value)}
+          />
+        </SecondColorPallet>
+        <ThirdColorPallet color3={thirdColor}>
+          <Input
+            value={thirdColor}
+            onChange={({ target }) => setThirdColor(target.value)}
+          />
+        </ThirdColorPallet>
+        <FourthColorPallet color4={fourthColor}>
+          <Input
+            value={fourthColor}
+            onChange={({ target }) => setFourthColor(target.value)}
+          />
+        </FourthColorPallet>
 
         <Button
           type="submit"
