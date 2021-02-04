@@ -5,21 +5,25 @@ import { Container } from "../../style/GlobalStyle";
 import Pallets from "./Pallets";
 
 import base_url from "../../services/api_url";
+import FeedLoading from "../Loading/FeedLoading";
 
 const Pallet = () => {
   const [pallets, setPallets] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(18);
   const [infinite, setInfinite] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
     const fetchAllPallets = async () => {
+      setLoading(true);
       const response = await fetch(`${base_url}?_total=${total}`, {
         cache: "no-store",
       });
       const json = await response.json();
       if (response.ok && json.length < total) setInfinite(false);
       if (isMounted) setPallets(json);
+      setLoading(false);
     };
     fetchAllPallets();
     return () => {
@@ -57,6 +61,7 @@ const Pallet = () => {
       <Wrapper>
         <Pallets pallets={pallets} />
       </Wrapper>
+      {!!loading && <FeedLoading />}
     </Container>
   );
 };

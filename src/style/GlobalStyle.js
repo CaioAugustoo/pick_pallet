@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   :root {
@@ -34,7 +34,6 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.div`
-  max-width: 112.5rem;
-  padding: 0.9375rem;
+  max-width: 1800px;
   margin: 0 auto;
 `;

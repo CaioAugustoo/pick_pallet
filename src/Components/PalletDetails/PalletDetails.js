@@ -34,11 +34,9 @@ const PalletDetails = () => {
   if (pallet === null) return null;
   return (
     <Container>
-      <>
-        <Wrapper>
-          <Pallet pallet={pallet} id={id} />
-        </Wrapper>
-      </>
+      <Wrapper>
+        <Pallet pallet={pallet} id={id} />
+      </Wrapper>
     </Container>
   );
 };

@@ -16,17 +16,17 @@ const dots = keyframes`
 `;
 
 export const PreLoader = styled.div`
-  position: absolute;
+  position: fixed;
   background: var(--secondary-bg);
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0.5;
+  opacity: 1;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
   overflow: hidden;
   pointer-events: none;
   display: flex;
@@ -63,4 +63,24 @@ export const RightDot = styled.div`
   animation: 2s ${dots} ease infinite;
   animation-delay: 0.6s;
   animation-fill-mode: backwards;
+`;
+
+export const Wrapper = styled.div`
+  margin: 25px auto 40px 0px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const FeedLoadingSpinner = styled.div`
+  border: 0.3rem solid rgba(0, 0, 0, 0.1);
+  border-left-color: #263646;
+  border-radius: 50%;
+  width: 1.125rem;
+  height: 1.125rem;
+  animation: spin 1s linear infinite;
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 `;

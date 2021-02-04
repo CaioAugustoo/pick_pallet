@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 55px;
+  padding: 75px 0 15px 0;
 `;
 
 export const BoxPallet = styled.div`
