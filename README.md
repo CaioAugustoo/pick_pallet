@@ -23,6 +23,7 @@ Para a realização desse projeto foi utilizado as seguintes tecnologias/linguag
 - [styled-components](https://styled-components.com) para a estilização
 - [API](https://github.com/CaioAugustoo/pickpallet_api) para a listagem de paletas
 - [React Router](https://reactrouter.com/web/guides/quick-start) para gerenciarmos as rotas
+- [Date-fns](https://date-fns.org/) para formatação de datas
 
 ## ⚙️ Instalação
 Para que este rode em sua máquina, siga os passos abaixo:
