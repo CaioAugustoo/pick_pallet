@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -10,7 +10,6 @@ import * as S from "./styles";
 const Header = () => {
   const [active, setActive] = useState(false);
   const [changeTheme] = useTheme()
-  const menuRef = useRef<HTMLElement>(null!);
   const { asPath, pathname } = useRouter();
 
   useEffect(() => {
@@ -27,7 +26,7 @@ const Header = () => {
             </a>
           </Link>
 
-          <S.MenuIcon ref={menuRef} onClick={() => setActive(prev => !prev)}>
+          <S.MenuIcon onClick={() => setActive(prev => !prev)}>
             •••
           </S.MenuIcon>
 

@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 
 import Pallet, { PalletProps } from "components/Pallet";
-import Loader from "../../components/Helper/Loader";
+import Loader from "components/Helper/Loader";
 import Head from "components/Helper/Head";
+import Toast from "components/Toast";
 
 import { GET_ALL_PALLETS } from "services/api";
 
 import * as S from "./styles";
 
 const HomeTemplate = () => {
+  const [toasted, setToasted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [infinite, setInfinite] = useState(true);
   const [total, setTotal] = useState(18);
@@ -68,10 +70,11 @@ const HomeTemplate = () => {
             pallet2={pallet2}
             pallet3={pallet3}
             pallet4={pallet4}
+            setToasted={setToasted}
           />
         ))}
       </S.Wrapper>
-
+      <Toast setToasted={setToasted} toasted={toasted} />
       {loading && <Loader />}
     </>
   );
