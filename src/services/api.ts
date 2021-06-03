@@ -1,6 +1,6 @@
 export const base_url = 'https://caioohtml.com/pickpallet/json/api/pallets'
 
-export const POST_PALLET = () => {
+export const POST_PALLET = (body: object) => {
   return {
     url: base_url,
     options: {
@@ -8,6 +8,7 @@ export const POST_PALLET = () => {
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify(body)
     },
   }
 }

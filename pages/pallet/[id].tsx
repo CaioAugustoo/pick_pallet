@@ -20,11 +20,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { url: palletByIdEndpoint } = GET_PALLET_BY_ID(Number(params?.id));
   const { url: allPalletsEndpoint } = GET_ALL_PALLETS(12)
 
-  const res1 = await fetch(palletByIdEndpoint);
-  const pallet = await res1.json();
+  const response1 = await fetch(palletByIdEndpoint);
+  const pallet = await response1.json();
 
-  const res2 = await fetch(allPalletsEndpoint);
-  const otherPallets = await res2.json()
+  const response2 = await fetch(allPalletsEndpoint);
+  const otherPallets = await response2.json()
 
   return {
     props: {
