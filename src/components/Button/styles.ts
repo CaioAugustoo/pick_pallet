@@ -2,19 +2,26 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   border-radius: 0.4rem;
-  border: 0.0625rem solid #e9f2f9;
+  border: 0.0625rem solid var(--border);
+
   padding: 0.7rem 1.3rem;
+
+  font-family: "Poppins";
   line-height: 2.25rem;
-  background: #fff;
+
+  background: var(--primary-bg);
+  color: var(--primary);
   transition: all 0.3s ease;
+  
   cursor: pointer;
   outline: none;
-  font-family: "Poppins";
+
 
   @media (min-width: 18.75rem) and (max-width: 75rem) {
-    line-height: 1rem;
-    font-size: 0.7rem;
-    padding: 0.25rem 0.4375rem;
+    line-height: 2rem;
+    font-size: 1.1rem;
+    
+    padding: 0.4rem 0.7rem;
   }
   
   &:hover {

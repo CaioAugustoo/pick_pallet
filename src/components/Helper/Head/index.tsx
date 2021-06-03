@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
 export type HeadProps = {
-  title: string
-}
+  title: string;
+};
 
 const Head = ({ title }: HeadProps) => {
   useEffect(() => {

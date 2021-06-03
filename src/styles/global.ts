@@ -1,13 +1,26 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-  :root {
+  :root[data-theme="light"] {
     --primary-bg: #FDFDFD;
     --secondary-bg: #FFFFFF;
+    --border: #e9f2f9;
     --primary-color: #263646;
+    --loader: #000000;
     
     --box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
     --secondary-shadow: 0 5px 10px 0 rgba(0,64,128,.05);
+  }
+
+  :root[data-theme="dark"] {
+    --primary-bg: #16161A;
+    --secondary-bg: #121215;
+    --border: #151519;
+    --primary-color: #f3f3f4;
+    --loader: #ffffff;
+    
+    --box-shadow: 0 10px 40px -10px rgba(0,0,0, 0.1);
+    --secondary-shadow: 0 5px 10px 0 rgba(0,0,0,.05);
   }
 
   html {

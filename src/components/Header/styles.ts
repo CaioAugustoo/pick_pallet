@@ -15,6 +15,9 @@ export const Header = styled.header`
   box-shadow: var(--secondary-shadow);
 
   nav {
+    max-width: 180rem;
+    margin: 0 auto;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;

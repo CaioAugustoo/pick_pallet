@@ -1,39 +1,39 @@
-import styled, { keyframes } from "styled-components";
-
-const item = keyframes`
-  from {
-    opacity: 0
-  } to {
-    opacity: 1;
-  }
-`;
+import styled from "styled-components";
+import { item } from "styles/keyframes";
 
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 75px 0 15px 0;
+
+  padding: 0.75rem 0 1.5rem 0;
 `;
 
 export const BoxPallet = styled.div`
-  width: 230px;
-  height: 280px;
+  width: 23rem;
+  height: 28rem;
+
   box-shadow: var(--box-shadow);
-  border-radius: 0.3125rem;
+  border-radius: 0.5rem;
+  background-color: var(--secondary-bg);
+
   padding: 20px 15px;
   margin: 10px;
+
   transition: all 0.3s ease;
   animation: ${item} 0.4s ease;
   animation-fill-mode: both;
+
   opacity: 0;
 
   @media (min-width: 300px) and (max-width: 500px) {
     opacity: 1;
-    width: 8rem;
-    height: 9.5rem;
+
+    width: 13rem;
+    height: 16rem;
   }
 
-  @media (max-width: 31.25rem) {
+  @media (max-width: 500px) {
     .pallet__date {
       display: none;
     }
@@ -42,10 +42,11 @@ export const BoxPallet = styled.div`
 `;
 
 export const PalletColors = styled.div`
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
+
   height: 250px;
+  border-radius: 4px;
 
   @media (min-width: 300px) and (max-width: 500px) {
     height: auto;
@@ -56,7 +57,7 @@ export const PalletColors = styled.div`
     position: relative;
 
     @media (min-width: 300px) and (max-width: 500px) {
-      height: 2.1rem;
+      height: 3.4rem;
     }
 
     &:first-child {
@@ -65,27 +66,33 @@ export const PalletColors = styled.div`
       height: 100px;
 
       @media (min-width: 300px) and (max-width: 500px) {
-        height: 3rem;
+        height: 4.8rem;
       }
 
     }
     &:last-child {
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
-      height: 35px;
+
+      height: 3.5rem;
 
       @media (min-width: 300px) and (max-width: 500px) {
-        height: 20px;
+        height: 2rem;
       }
     }
+    
     p {
       position: absolute;
       bottom: 0;
+
       opacity: 0;
+
       text-transform: uppercase;
       color: white;
+
       cursor: pointer;
       transition: all 0.3s ease;
+
       padding: 2px 0px 0 0px;
       
       @media (min-width: 300px) and (max-width: 500px) {
@@ -107,7 +114,7 @@ export const PostedAt = styled.p`
   font-size: 1.28rem;
   
   @media (min-width: 300px) and (max-width: 1200px) {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -116,8 +123,8 @@ export const Wrap = styled.div`
   justify-content: space-between;
   align-items: center;
   
-  @media (max-width: 31.25rem) {
+  @media (max-width: 500px) {
     justify-content: center;
-    margin-top: 5px;
+    margin-top: 7px;
   }
 `;

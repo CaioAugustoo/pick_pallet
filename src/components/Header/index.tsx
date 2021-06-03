@@ -1,17 +1,21 @@
 import { useState, useRef, useEffect } from "react";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
+
+import useTheme from 'hooks/useTheme'
 
 import * as S from "./styles";
 
 const Header = () => {
   const [active, setActive] = useState(false);
+  const [changeTheme] = useTheme()
   const menuRef = useRef<HTMLElement>(null!);
   const { asPath, pathname } = useRouter();
 
   useEffect(() => {
-    setActive(false)
-  }, [pathname])
+    setActive(false);
+  }, [pathname]);
 
   return (
     <S.Header>
@@ -49,6 +53,7 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
+              <li onClick={changeTheme}>Alterar tema</li>
             </ul>
           </S.Menu>
         </nav>

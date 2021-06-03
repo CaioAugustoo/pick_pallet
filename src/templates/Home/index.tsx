@@ -1,12 +1,12 @@
-import * as S from "./styles";
-
-import Pallet, { PalletProps } from "components/Pallet";
-
 import { useEffect, useState } from "react";
 
-import Loader from "../../components/Loader";
+import Pallet, { PalletProps } from "components/Pallet";
+import Loader from "../../components/Helper/Loader";
+import Head from "components/Helper/Head";
 
 import { GET_ALL_PALLETS } from "services/api";
+
+import * as S from "./styles";
 
 const HomeTemplate = () => {
   const [loading, setLoading] = useState(false);
@@ -57,6 +57,7 @@ const HomeTemplate = () => {
 
   return (
     <>
+      <Head title="Paletas" />
       <S.Wrapper>
         {data.map(({ id, pallet1, pallet2, pallet3, pallet4, created_at }) => (
           <Pallet

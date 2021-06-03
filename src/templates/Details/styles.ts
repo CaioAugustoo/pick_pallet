@@ -1,26 +1,25 @@
-import styled, { keyframes } from "styled-components";
-
-const item = keyframes`
-  from {
-    opacity: 0
-  } to {
-    opacity: 1;
-  }
-`;
+import styled from "styled-components";
+import { item } from "styles/keyframes";
 
 export const Wrapper = styled.div`
   margin: 0 auto;
+
+  max-width: 180rem;
   height: 100vh;
 `;
 
 export const BoxPallet = styled.div`
   box-shadow: var(--box-shadow);
   border-radius: 0.3125rem;
+  background-color: var(--secondary-bg);
+
   padding: 20px 15px;
   margin: 75px 15px 0 15px;
+
   transition: all 0.3s ease;
   animation: ${item} 0.4s ease;
   animation-fill-mode: both;
+
   opacity: 0;
 `;
 
@@ -35,7 +34,7 @@ export const PalletColors = styled.div`
       height: 300px;
 
       @media (min-width: 300px) and (max-width: 500px) {
-        height: 6.25rem;
+        height: 10rem;
       }
     }
 
@@ -45,25 +44,27 @@ export const PalletColors = styled.div`
       height: 100px;
 
       @media (min-width: 300px) and (max-width: 500px) {
-        height: 3.125rem;
+        height: 5rem;
       }
-
     }
     @media (min-width: 300px) and (max-width: 1200px) {
-      height: 4.375rem;
+      height: 7rem;
     }
 
     p {
       position: absolute;
       bottom: 0;
+
       opacity: 0;
       text-transform: uppercase;
       color: white;
+
       cursor: pointer;
       transition: all 0.3s ease;
+
       padding: 2px 0px 0 0px;
     }
-    
+
     &:hover {
       p {
         opacity: 1;
@@ -80,7 +81,7 @@ export const PostedAt = styled.p`
   margin-left: 10px;
 
   @media (min-width: 300px) and (max-width: 1200px) {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -88,5 +89,6 @@ export const Wrap = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+
   margin-top: 15px;
 `;

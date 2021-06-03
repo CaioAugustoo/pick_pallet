@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Loading = styled.div`
   height: 2px;
-  background: black;
+  background: var(--secondary-bg);
   overflow: hidden;
   max-width: 25%;
   margin: 2rem auto;
@@ -12,7 +12,7 @@ export const Loading = styled.div`
     display: block;
     width: 75%;
     height: 2px;
-    background: white;
+    background: var(--loader);;
     animation: loading 0.5s linear forwards infinite;
   }
   
