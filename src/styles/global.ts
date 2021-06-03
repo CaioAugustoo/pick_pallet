@@ -7,6 +7,9 @@ export default createGlobalStyle`
     --border: #e9f2f9;
     --primary-color: #263646;
     --loader: #000000;
+    --toast-bg: #FFFFFF;
+    --toast-text: #000000;
+    
     
     --box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
     --secondary-shadow: 0 5px 10px 0 rgba(0,64,128,.05);
@@ -18,6 +21,10 @@ export default createGlobalStyle`
     --border: #151519;
     --primary-color: #f3f3f4;
     --loader: #ffffff;
+
+
+    --toast-bg: #292930;
+    --toast-text: #ffffff;
     
     --box-shadow: 0 10px 40px -10px rgba(0,0,0, 0.1);
     --secondary-shadow: 0 5px 10px 0 rgba(0,0,0,.05);

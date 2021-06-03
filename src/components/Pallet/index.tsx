@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { useRouter } from "next/dist/client/router";
-import React from "react";
+
+import Toast from "components/Toast";
+import Button from "components/Button"
+
 import copyToClipboard from "utils/copy_to_clipboard";
-import formatDate from "../../utils/format_date";
-import Button from "../Button";
+import formatDate from "utils/format_date";
+
 import * as S from "./styles";
 
 export type PalletProps = {
@@ -12,7 +16,8 @@ export type PalletProps = {
   pallet2: string;
   pallet3: string;
   pallet4: string;
-}
+  setToasted: (toasted: boolean) => void
+};
 
 const Pallet = ({
   id,
@@ -21,6 +26,7 @@ const Pallet = ({
   pallet2,
   pallet3,
   pallet4,
+  setToasted
 }: PalletProps) => {
   const { push } = useRouter();
 
@@ -29,16 +35,40 @@ const Pallet = ({
       <S.BoxPallet>
         <S.PalletColors>
           <div style={{ backgroundColor: `${pallet1}` }}>
-            <p onClick={() => copyToClipboard(pallet1)}>{pallet1}</p>
+            <p
+              onClick={() => {
+                copyToClipboard(pallet1), setToasted(true);
+              }}
+            >
+              {pallet1}
+            </p>
           </div>
           <div style={{ backgroundColor: `${pallet2}` }}>
-            <p onClick={() => copyToClipboard(pallet2)}>{pallet2}</p>
+            <p
+              onClick={() => {
+                copyToClipboard(pallet2), setToasted(true);
+              }}
+            >
+              {pallet2}
+            </p>
           </div>
           <div style={{ backgroundColor: `${pallet3}` }}>
-            <p onClick={() => copyToClipboard(pallet3)}>{pallet3}</p>
+            <p
+              onClick={() => {
+                copyToClipboard(pallet3), setToasted(true);
+              }}
+            >
+              {pallet3}
+            </p>
           </div>
           <div style={{ backgroundColor: `${pallet4}` }}>
-            <p onClick={() => copyToClipboard(pallet4)}>{pallet4}</p>
+            <p
+              onClick={() => {
+                copyToClipboard(pallet4), setToasted(true);
+              }}
+            >
+              {pallet4}
+            </p>
           </div>
         </S.PalletColors>
 
