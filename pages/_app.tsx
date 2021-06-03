@@ -1,6 +1,7 @@
 import Global from "../src/styles/global";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Header  from "components/Header";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
+      <Header />
       <Component {...pageProps} />
       <Global />
     </>
