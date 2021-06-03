@@ -1,14 +1,16 @@
+import { useState } from "react";
+
 import { PalletProps } from "components/Pallet";
 import Button from "components/Button";
 import Head from "components/Helper/Head";
+import Toast from "components/Toast";
+
 import Others, { OthersProps } from "templates/Others";
 
 import copyToClipboard from "utils/copy_to_clipboard";
 import formatDate from "utils/format_date";
 
 import * as S from "./styles";
-import Toast from "components/Toast";
-import { useState } from "react";
 
 export type DetailsProps = PalletProps & OthersProps;
 
@@ -22,6 +24,7 @@ const Details = ({
   otherPallets,
 }: DetailsProps) => {
   const [toasted, setToasted] = useState(false);
+  
   return (
     <>
       <Head title="Detalhes" />
