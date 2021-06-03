@@ -96,7 +96,7 @@ export const PalletColors = styled.div`
       padding: 2px 0px 0 0px;
       
       @media (min-width: 300px) and (max-width: 500px) {
-        font-size: 0.8rem;
+        font-size: 1.2rem;
       }
     }
     &:hover {
