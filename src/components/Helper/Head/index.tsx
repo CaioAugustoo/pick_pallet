@@ -4,7 +4,7 @@ export type HeadProps = {
   title: string;
 };
 
-const Head = ({ title }: HeadProps) => {
+const Head = ({ title = "Palletas | PickPallet" }: HeadProps) => {
   useEffect(() => {
     document.title = title + " | PickPallet";
   }, [title]);

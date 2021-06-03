@@ -25,6 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600&display=swap"
           rel="stylesheet"
         />
+        <title>Palletas | PickPallet</title>
       </Head>
       <Header />
       <Component {...pageProps} />

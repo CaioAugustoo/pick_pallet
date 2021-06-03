@@ -12,7 +12,7 @@ export type PalletProps = {
   pallet2: string;
   pallet3: string;
   pallet4: string;
-};
+}
 
 const Pallet = ({
   id,

@@ -1,11 +1,14 @@
 import { PalletProps } from "components/Pallet";
 import Button from "components/Button";
 import Head from "components/Helper/Head";
+import Others, { OthersProps } from "templates/Others";
 
 import copyToClipboard from "utils/copy_to_clipboard";
 import formatDate from "utils/format_date";
 
 import * as S from "./styles";
+
+export type DetailsProps = PalletProps & OthersProps
 
 const Details = ({
   id,
@@ -14,7 +17,8 @@ const Details = ({
   pallet3,
   pallet4,
   created_at,
-}: PalletProps) => {
+  otherPallets
+}: DetailsProps) => {
   return (
     <>
       <Head title="Detalhes" />
@@ -42,6 +46,9 @@ const Details = ({
             </S.PostedAt>
           </S.Wrap>
         </S.BoxPallet>
+        
+        
+        <Others otherPallets={otherPallets} />
       </S.Wrapper>
     </>
   );
