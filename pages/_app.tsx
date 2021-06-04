@@ -8,7 +8,7 @@ import Head from "next/head";
 import Header from "components/Header";
 import Toast from "components/Toast";
 
-import { ToastProvider } from "contexts/toastContext";
+import { ToastProvider } from "contexts/Toast";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

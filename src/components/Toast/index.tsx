@@ -1,4 +1,4 @@
-import { ToastContext } from "contexts/toastContext";
+import { ToastContext } from "contexts/Toast";
 import { useContext } from "react";
 
 import * as S from "./styles";
