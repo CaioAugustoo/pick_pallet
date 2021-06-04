@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <NextNprogress
         color="#29D"
         startPosition={0.3}
-        stopDelayMs={200}
+        stopDelayMs={0}
         height={5}
       />
       <Header />
