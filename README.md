@@ -21,7 +21,7 @@ Para a realização desse projeto foram utilizadas as seguintes tecnologias/ling
 - [Next.js](https://nextjs.org/) 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled components](https://styled-components.com)
-- (Next.js Progressbar)(https://www.npmjs.com/package/nextjs-progressbar)
+- [Next.js Progressbar](https://www.npmjs.com/package/nextjs-progressbar)
 
 ## ⚙️ Instalação
 Para que este rode em sua máquina, siga os passos abaixo:
