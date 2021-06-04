@@ -62,7 +62,7 @@ const Create = () => {
           />
         </S.FourthColorPallet>
 
-        <Button type="submit" disabled={loading ? true : false}>
+        <Button type="submit" disabled={loading}>
           {loading ? "Carregando..." : "Pronto!"}
         </Button>
       </form>
