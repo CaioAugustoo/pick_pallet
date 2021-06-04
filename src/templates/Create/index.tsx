@@ -31,7 +31,6 @@ const Create = () => {
     const json = await response.json();
 
     push(`/pallet/${json}`);
-    setLoading(false);
   }
 
   return (

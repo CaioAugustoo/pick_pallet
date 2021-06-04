@@ -1,19 +1,10 @@
-import { useEffect } from "react";
+import { ToastContext } from "contexts/toastContext";
+import { useContext } from "react";
+
 import * as S from "./styles";
 
-export type ToastProps = {
-  toasted: boolean;
-  setToasted: (toasted: boolean) => void;
-};
-
-const Toast = ({ toasted, setToasted }: ToastProps) => {
-  useEffect(() => {
-    const handler = setTimeout(() => {
-      setToasted(false);
-    }, 1200);
-
-    return () => clearTimeout(handler);
-  }, [toasted]);
+const Toast = () => {
+  const { toasted } = useContext(ToastContext);
 
   return (
     <>
