@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ToastContext } from "contexts/toastContext";
+import { ToastContext } from "contexts/Toast";
 
 import { PalletProps } from "components/Pallet";
 import Button from "components/Button";

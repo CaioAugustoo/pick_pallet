@@ -6,7 +6,7 @@ import Button from "components/Button";
 import copyToClipboard from "utils/copy_to_clipboard";
 import formatDate from "utils/format_date";
 
-import { ToastContext } from "contexts/toastContext";
+import { ToastContext } from "contexts/Toast";
 
 import * as S from "./styles";
 
