@@ -13,7 +13,6 @@
     "@babel/preset-typescript": "^7.13.0",
     "date-fns": "^2.21.3",
     "next": "10.2.2",
-    "next-nprogress": "^1.4.0",
     "nextjs-progressbar": "^0.0.10",
     "react": "17.0.2",
     "react-dom": "^17.0.2",
