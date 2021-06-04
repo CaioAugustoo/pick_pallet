@@ -21,6 +21,7 @@ Para a realização desse projeto foram utilizadas as seguintes tecnologias/ling
 - [Next.js](https://nextjs.org/) 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled components](https://styled-components.com)
+- [date-fns](https://date-fns.org/)
 - [Next.js Progressbar](https://www.npmjs.com/package/nextjs-progressbar)
 
 ## ⚙️ Instalação
