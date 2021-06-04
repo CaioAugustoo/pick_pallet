@@ -1,35 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎨 Pickpallet
+Web app que contém diversas paletas de cores.
 
-## Getting Started
+## ℹ️ Sobre o projeto 
+Este projeto consiste em uma web app que lista centenas de paletas. Inspirado no color hunt. Consome [uma api](https://github.com/CaioAugustoo/pickpallet_api) e retorna os dados.
+É possível criar e visualizar diferentes paletas. A api foi desenvolvida por mim.
 
-First, run the development server:
+## ✨ Demonstração
+Veja abaixo uma foto do projeto.
+[![Image from Gyazo](https://i.gyazo.com/202bf930c56eb36a0b6382842cd467a4.png)](https://gyazo.com/202bf930c56eb36a0b6382842cd467a4)
+
+Você pode conferir o resultado final em: https://pick-pallet.vercel.app/
+
+
+## 🎯 Objetivo do projeto
+Este projeto foi desenvolvido para aqueles designers que não sabem onde encontrar paletas para seus respectivos projetos. Além disso, foi desenvolvido para aperfeiçoar os
+conhecimentos em Next.js e TypeScript.
+
+## 📝 Tecnologias 
+Para a realização desse projeto foram utilizadas as seguintes tecnologias/linguagens: 
+- [Next.js](https://nextjs.org/) 
+- [TypeScript](https://www.typescriptlang.org/)
+- [Styled components](https://styled-components.com)
+- [date-fns](https://date-fns.org/)
+- [Next.js Progressbar](https://www.npmjs.com/package/nextjs-progressbar)
+
+## ⚙️ Instalação
+Para que este rode em sua máquina, siga os passos abaixo:
 
 ```bash
-npm run dev
-# or
-yarn dev
-`
+# Clone o repositório em alguma pasta em sua máquina
+$ git clone https://github.com/CaioAugustoo/pick_pallet.git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Entre no repositório
+$ cd pick_pallet
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Instale as dependencias digitando no termimal:
+$ yarn install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Rode a aplicação no modo de desenvolvimento.
+$ yarn dev
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Abra http://localhost:3000 no seu navegador para visualizar o projeto
 ```
