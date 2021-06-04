@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { ToastContext } from "contexts/toastContext";
 
 import { PalletProps } from "components/Pallet";
 import Button from "components/Button";
 import Head from "components/Helper/Head";
-import Toast from "components/Toast";
 
 import Others, { OthersProps } from "templates/Others";
 
@@ -23,8 +23,8 @@ const Details = ({
   created_at,
   otherPallets,
 }: DetailsProps) => {
-  const [toasted, setToasted] = useState(false);
-  
+  const { toast } = useContext(ToastContext);
+
   return (
     <>
       <Head title="Detalhes" />
@@ -35,7 +35,7 @@ const Details = ({
               <p
                 onClick={() => {
                   copyToClipboard(pallet1);
-                  setToasted(true);
+                  toast();
                 }}
               >
                 {pallet1}
@@ -45,7 +45,7 @@ const Details = ({
               <p
                 onClick={() => {
                   copyToClipboard(pallet2);
-                  setToasted(true);
+                  toast();
                 }}
               >
                 {pallet2}
@@ -55,7 +55,7 @@ const Details = ({
               <p
                 onClick={() => {
                   copyToClipboard(pallet3);
-                  setToasted(true);
+                  toast();
                 }}
               >
                 {pallet3}
@@ -65,7 +65,7 @@ const Details = ({
               <p
                 onClick={() => {
                   copyToClipboard(pallet4);
-                  setToasted(true);
+                  toast();
                 }}
               >
                 {pallet4}
@@ -76,7 +76,7 @@ const Details = ({
           <S.Wrap>
             <Button
               onClick={() => {
-                copyToClipboard(id, true), setToasted(true);
+                copyToClipboard(id, true), toast();
               }}
             >
               Link
@@ -89,7 +89,6 @@ const Details = ({
 
         <Others otherPallets={otherPallets} />
       </S.Wrapper>
-      <Toast toasted={toasted} setToasted={setToasted} />
     </>
   );
 };

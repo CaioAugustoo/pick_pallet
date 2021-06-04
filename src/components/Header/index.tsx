@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import useTheme from 'hooks/useTheme'
+import useTheme from "hooks/useTheme";
 
 import * as S from "./styles";
 
 const Header = () => {
   const [active, setActive] = useState(false);
-  const [changeTheme] = useTheme()
+  const [changeTheme] = useTheme();
   const { asPath, pathname } = useRouter();
 
   useEffect(() => {
@@ -26,9 +26,7 @@ const Header = () => {
             </a>
           </Link>
 
-          <S.MenuIcon onClick={() => setActive(prev => !prev)}>
-            •••
-          </S.MenuIcon>
+          <S.MenuIcon onClick={() => setActive(prev => !prev)}>•••</S.MenuIcon>
 
           <S.Menu active={active}>
             <ul>
@@ -46,7 +44,7 @@ const Header = () => {
                 <Link href="/create" passHref>
                   <a
                     title="Criar paleta"
-                    className={asPath === "/criar" ? "active" : ""}
+                    className={asPath === "/create" ? "active" : ""}
                   >
                     Criar
                   </a>

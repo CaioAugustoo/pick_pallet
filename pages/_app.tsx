@@ -1,7 +1,14 @@
+import NextNprogress from "nextjs-progressbar";
+
 import Global from "../src/styles/global";
+
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import Header  from "components/Header";
+
+import Header from "components/Header";
+import Toast from "components/Toast";
+
+import { ToastProvider } from "contexts/ToastContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -27,8 +34,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <title>Palletas | PickPallet</title>
       </Head>
+      <NextNprogress
+        color="#29D"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={5}
+      />
       <Header />
-      <Component {...pageProps} />
+      <ToastProvider>
+        <Component {...pageProps} />
+        <Toast />
+      </ToastProvider>
       <Global />
     </>
   );

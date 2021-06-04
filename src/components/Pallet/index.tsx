@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { useRouter } from "next/dist/client/router";
+import { useContext } from "react";
+import { useRouter } from "next/router";
 
-import Toast from "components/Toast";
-import Button from "components/Button"
+import Button from "components/Button";
 
 import copyToClipboard from "utils/copy_to_clipboard";
 import formatDate from "utils/format_date";
+
+import { ToastContext } from "contexts/toastContext";
 
 import * as S from "./styles";
 
@@ -16,7 +17,6 @@ export type PalletProps = {
   pallet2: string;
   pallet3: string;
   pallet4: string;
-  setToasted: (toasted: boolean) => void
 };
 
 const Pallet = ({
@@ -26,9 +26,9 @@ const Pallet = ({
   pallet2,
   pallet3,
   pallet4,
-  setToasted
 }: PalletProps) => {
   const { push } = useRouter();
+  const { toast } = useContext(ToastContext);
 
   return (
     <>
@@ -37,7 +37,7 @@ const Pallet = ({
           <div style={{ backgroundColor: `${pallet1}` }}>
             <p
               onClick={() => {
-                copyToClipboard(pallet1), setToasted(true);
+                copyToClipboard(pallet1), toast();
               }}
             >
               {pallet1}
@@ -46,7 +46,7 @@ const Pallet = ({
           <div style={{ backgroundColor: `${pallet2}` }}>
             <p
               onClick={() => {
-                copyToClipboard(pallet2), setToasted(true);
+                copyToClipboard(pallet2), toast();
               }}
             >
               {pallet2}
@@ -55,7 +55,7 @@ const Pallet = ({
           <div style={{ backgroundColor: `${pallet3}` }}>
             <p
               onClick={() => {
-                copyToClipboard(pallet3), setToasted(true);
+                copyToClipboard(pallet3), toast();
               }}
             >
               {pallet3}
@@ -64,7 +64,7 @@ const Pallet = ({
           <div style={{ backgroundColor: `${pallet4}` }}>
             <p
               onClick={() => {
-                copyToClipboard(pallet4), setToasted(true);
+                copyToClipboard(pallet4), toast();
               }}
             >
               {pallet4}
