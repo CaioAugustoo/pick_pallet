@@ -34,7 +34,7 @@ $ git clone https://github.com/CaioAugustoo/pick_pallet.git
 # Entre no repositório
 $ cd pick_pallet
 
-Instale as dependencias digitando no termimal:
+Instale as dependências digitando no termimal:
 $ yarn install
 
 Rode a aplicação no modo de desenvolvimento.
