@@ -18,43 +18,41 @@ const Header = () => {
 
   return (
     <S.Header>
-      <>
-        <nav>
-          <Link href="/" passHref>
-            <a>
-              <S.Logo>PickPallet</S.Logo>
-            </a>
-          </Link>
+      <nav>
+        <Link href="/" passHref>
+          <a>
+            <S.Logo>PickPallet</S.Logo>
+          </a>
+        </Link>
 
-          <S.MenuIcon onClick={() => setActive(prev => !prev)}>•••</S.MenuIcon>
+        <S.MenuIcon onClick={() => setActive(prev => !prev)}>•••</S.MenuIcon>
 
-          <S.Menu active={active}>
-            <ul>
-              <li>
-                <Link href="/" passHref>
-                  <a
-                    title="Todas as paletas"
-                    className={asPath === "/" ? "active" : ""}
-                  >
-                    Paletas
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/create" passHref>
-                  <a
-                    title="Criar paleta"
-                    className={asPath === "/create" ? "active" : ""}
-                  >
-                    Criar
-                  </a>
-                </Link>
-              </li>
-              <li onClick={changeTheme}>Alterar tema</li>
-            </ul>
-          </S.Menu>
-        </nav>
-      </>
+        <S.Menu active={active}>
+          <ul>
+            <li>
+              <Link href="/" passHref>
+                <a
+                  title="Todas as paletas"
+                  className={asPath === "/" ? "active" : ""}
+                >
+                  Paletas
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/create" passHref>
+                <a
+                  title="Criar paleta"
+                  className={asPath === "/create" ? "active" : ""}
+                >
+                  Criar
+                </a>
+              </Link>
+            </li>
+            <li onClick={changeTheme}>Alterar tema</li>
+          </ul>
+        </S.Menu>
+      </nav>
     </S.Header>
   );
 };

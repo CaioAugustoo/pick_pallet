@@ -7,7 +7,6 @@ export type OthersProps = {
 };
 
 const Others = ({ otherPallets }: OthersProps) => {
-
   return (
     <S.Wrapper>
       {otherPallets.map(

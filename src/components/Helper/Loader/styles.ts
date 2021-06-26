@@ -12,10 +12,10 @@ export const Loading = styled.div`
     display: block;
     width: 75%;
     height: 2px;
-    background: var(--loader);;
+    background: var(--loader);
     animation: loading 0.5s linear forwards infinite;
   }
-  
+
   @keyframes loading {
     from {
       transform: translateX(-100%);

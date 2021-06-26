@@ -3,7 +3,7 @@ import * as S from "./styles";
 
 export type ButtonProps = {
   children: React.ReactNode;
-  onClick?: () => void
+  onClick?: () => void;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({ children, disabled, onClick, ...rest }: ButtonProps) => {

@@ -38,7 +38,6 @@ const HomeTemplate = () => {
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.85 && !wait) {
           setTotal(total => total + 18);
-
           wait = true;
           setTimeout(() => {
             wait = false;
