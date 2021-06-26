@@ -17,7 +17,7 @@ export const Header = styled.header`
   nav {
     max-width: 180rem;
     margin: 0 auto;
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,19 +48,19 @@ export const Menu = styled.div<MenuProps>`
   pointer-events: ${({ active }) => (active ? "initial" : "none")};
 
   background: var(--secondary-bg);
-  
+
   box-shadow: var(--secondary-shadow);
   position: fixed;
   right: 0;
   top: 6rem;
 
   z-index: 2;
-  padding: 1.0rem 2.0rem;
+  padding: 1rem 2rem;
 
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 
-  width: 13.0rem;
+  width: 13rem;
   transition: opacity 0.1s ease;
 
   @media (min-width: 18.75rem) and (max-width: 25rem) {
@@ -74,7 +74,7 @@ export const Menu = styled.div<MenuProps>`
       font-size: 1.4rem;
       transition: opacity 0.3s ease;
       cursor: pointer;
-      padding: 1.0rem 0;
+      padding: 1rem 0;
 
       &:hover {
         opacity: 0.5;

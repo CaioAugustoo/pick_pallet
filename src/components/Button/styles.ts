@@ -12,18 +12,17 @@ export const Button = styled.button`
   background: var(--primary-bg);
   color: var(--primary);
   transition: all 0.3s ease;
-  
+
   cursor: pointer;
   outline: none;
-
 
   @media (min-width: 18.75rem) and (max-width: 75rem) {
     line-height: 2rem;
     font-size: 1.1rem;
-    
+
     padding: 0.4rem 0.7rem;
   }
-  
+
   &:hover {
     opacity: 0.8;
   }

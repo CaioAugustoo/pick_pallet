@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -6,4 +6,4 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
 
   padding: 15px 0px 35px;
-`
+`;

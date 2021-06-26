@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { item } from "styles/keyframes";
 
-
 export const Wrapper = styled.div`
   display: flex;
   margin-top: 12rem;
