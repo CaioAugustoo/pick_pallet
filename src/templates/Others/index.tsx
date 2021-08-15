@@ -1,12 +1,12 @@
-import Pallet, { PalletProps } from "components/Pallet";
+import Pallet, { IPallet } from "components/Pallet";
 
 import * as S from "./styles";
 
-export type OthersProps = {
-  otherPallets: PalletProps[];
-};
+export interface IOthers {
+  otherPallets: IPallet[];
+}
 
-const Others = ({ otherPallets }: OthersProps) => {
+const Others = ({ otherPallets }: IOthers) => {
   return (
     <S.Wrapper>
       {otherPallets.map(

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Pallet, { PalletProps } from "components/Pallet";
+import Pallet, { IPallet } from "components/Pallet";
+import Favorites from "components/Favorites";
 import Loader from "components/Helper/Loader";
 import Head from "components/Helper/Head";
 
@@ -12,7 +13,7 @@ const HomeTemplate = () => {
   const [loading, setLoading] = useState(false);
   const [infinite, setInfinite] = useState(true);
   const [total, setTotal] = useState(18);
-  const [data, setData] = useState<PalletProps[]>([]);
+  const [data, setData] = useState<IPallet[]>([]);
 
   const { url } = GET_ALL_PALLETS(total);
 
@@ -37,7 +38,7 @@ const HomeTemplate = () => {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
         if (scroll > height * 0.85 && !wait) {
-          setTotal(total => total + 18);
+          setTotal((total: number) => total + 18);
           wait = true;
           setTimeout(() => {
             wait = false;
@@ -58,17 +59,29 @@ const HomeTemplate = () => {
     <>
       <Head title="Paletas" />
       <S.Wrapper>
-        {data.map(({ id, pallet1, pallet2, pallet3, pallet4, created_at }) => (
-          <Pallet
-            key={id}
-            id={id}
-            created_at={created_at}
-            pallet1={pallet1}
-            pallet2={pallet2}
-            pallet3={pallet3}
-            pallet4={pallet4}
-          />
-        ))}
+        <div className="left-side">
+          {data.map(
+            ({
+              id,
+              pallet1,
+              pallet2,
+              pallet3,
+              pallet4,
+              created_at,
+            }: IPallet) => (
+              <Pallet
+                key={id}
+                id={id}
+                created_at={created_at}
+                pallet1={pallet1}
+                pallet2={pallet2}
+                pallet3={pallet3}
+                pallet4={pallet4}
+              />
+            )
+          )}
+        </div>
+        <Favorites />
       </S.Wrapper>
       {loading && <Loader />}
     </>

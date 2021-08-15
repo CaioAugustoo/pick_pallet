@@ -1,18 +1,17 @@
-import { useContext } from "react";
-import { ToastContext } from "contexts/Toast";
+import toast from "react-hot-toast";
 
-import { PalletProps } from "components/Pallet";
+import { IPallet } from "components/Pallet";
 import Button from "components/Button";
 import Head from "components/Helper/Head";
 
-import Others, { OthersProps } from "templates/Others";
+import Others, { IOthers } from "templates/Others";
 
 import copyToClipboard from "utils/copy_to_clipboard";
-import formatDate from "utils/format_date";
+import formatDate from "utils/formatters/format_date";
 
 import * as S from "./styles";
 
-export type DetailsProps = PalletProps & OthersProps;
+export type DetailsProps = IPallet & IOthers;
 
 const Details = ({
   id,
@@ -23,7 +22,14 @@ const Details = ({
   created_at,
   otherPallets,
 }: DetailsProps) => {
-  const { toast } = useContext(ToastContext);
+  const DATE_TITLE = `Postada há ${formatDate(created_at)}`;
+
+  function handleCopyToClipBoardAndToast(palletColor: string): void {
+    copyToClipboard(palletColor);
+    toast.success("Paleta copiada!", {
+      icon: "🎨",
+    });
+  }
 
   return (
     <>
@@ -32,58 +38,30 @@ const Details = ({
         <S.BoxPallet>
           <S.PalletColors>
             <div style={{ backgroundColor: `${pallet1}` }}>
-              <p
-                onClick={() => {
-                  copyToClipboard(pallet1);
-                  toast();
-                }}
-              >
+              <p onClick={() => handleCopyToClipBoardAndToast(pallet1)}>
                 {pallet1}
               </p>
             </div>
             <div style={{ backgroundColor: `${pallet2}` }}>
-              <p
-                onClick={() => {
-                  copyToClipboard(pallet2);
-                  toast();
-                }}
-              >
+              <p onClick={() => handleCopyToClipBoardAndToast(pallet2)}>
                 {pallet2}
               </p>
             </div>
             <div style={{ backgroundColor: `${pallet3}` }}>
-              <p
-                onClick={() => {
-                  copyToClipboard(pallet3);
-                  toast();
-                }}
-              >
+              <p onClick={() => handleCopyToClipBoardAndToast(pallet3)}>
                 {pallet3}
               </p>
             </div>
             <div style={{ backgroundColor: `${pallet4}` }}>
-              <p
-                onClick={() => {
-                  copyToClipboard(pallet4);
-                  toast();
-                }}
-              >
+              <p onClick={() => handleCopyToClipBoardAndToast(pallet3)}>
                 {pallet4}
               </p>
             </div>
           </S.PalletColors>
 
           <S.Wrap>
-            <Button
-              onClick={() => {
-                copyToClipboard(id, true), toast();
-              }}
-            >
-              Link
-            </Button>
-            <S.PostedAt title={`Postada há ${formatDate(created_at)}`}>
-              {formatDate(created_at)}
-            </S.PostedAt>
+            <Button>Link</Button>
+            <S.PostedAt title={DATE_TITLE}>{formatDate(created_at)}</S.PostedAt>
           </S.Wrap>
         </S.BoxPallet>
 
