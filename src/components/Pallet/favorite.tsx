@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-
 import * as S from "./styles";
 
 export interface IPallet {

@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import Button from "components/Button";
 
 import copyToClipboard from "utils/copy_to_clipboard";
-import formatDate from "utils/formatters/format_date";
+import { toastColor, toastFavorited, toastRemovedFavorite } from "utils/toasts";
 
 import { useFavorites } from "hooks/useFavorites";
 
@@ -22,18 +22,27 @@ export interface IPallet {
 
 const Pallet = (data: IPallet) => {
   const { push } = useRouter();
-  const { saveAsFavorite } = useFavorites();
-  const DATE_TITLE = `Postada há ${formatDate(data?.created_at)}`;
+  const { saveAsFavorite, isFavorited, removeAsFavorite } = useFavorites();
+
+  const isSavedAsFavorite = isFavorited(data.id);
 
   function handleCopyToClipBoardAndToast(palletColor: string): void {
     copyToClipboard(palletColor);
-    toast.success("Paleta copiada!", {
-      icon: "🎨",
-    });
+    toastColor();
   }
 
-  function navigateToPallet(palletId: number) {
-    push(`/pallet/${palletId}`);
+  function handleFavorite(): void {
+    saveAsFavorite(data);
+    toastFavorited();
+  }
+
+  function handleRemoveAsFavorite(): void {
+    removeAsFavorite(data.id);
+    toastRemovedFavorite();
+  }
+
+  function handleNavigateToPallet() {
+    push(`/pallet/${data.id}`);
   }
 
   return (
@@ -83,16 +92,12 @@ const Pallet = (data: IPallet) => {
         </S.PalletColors>
 
         <S.Wrap>
-          <Button
-            title="Salvar como favorito"
-            onClick={() => saveAsFavorite(data)}
-          >
-            Salvar
-          </Button>
-
-          <S.PostedAt className="pallet__date" title={DATE_TITLE}>
-            {formatDate(data?.created_at)}
-          </S.PostedAt>
+          {isSavedAsFavorite ? (
+            <Button onClick={handleRemoveAsFavorite}>Salvo</Button>
+          ) : (
+            <Button onClick={handleFavorite}>Salvar</Button>
+          )}
+          <Button onClick={handleNavigateToPallet}>Detalhes</Button>
         </S.Wrap>
       </S.BoxPallet>
     </>
