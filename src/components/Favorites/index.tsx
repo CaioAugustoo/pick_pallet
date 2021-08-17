@@ -1,5 +1,8 @@
 import FavoritePallet from "components/Pallet/favorite";
+
 import { useFavorites } from "hooks/useFavorites";
+
+import * as S from "./styles";
 
 const Favorites = () => {
   const { favorites } = useFavorites();
@@ -7,14 +10,14 @@ const Favorites = () => {
   if (!favorites?.length) return null;
 
   return (
-    <div style={{ position: "fixed", right: "0" }}>
-      <p>Favorites</p>
-      <div>
+    <S.Wrapper className="right">
+      <p>Favoritos</p>
+      <S.FavoritesWrapper>
         {favorites?.map(pallet => (
           <FavoritePallet key={pallet.id} {...pallet} />
         ))}
-      </div>
-    </div>
+      </S.FavoritesWrapper>
+    </S.Wrapper>
   );
 };
 
