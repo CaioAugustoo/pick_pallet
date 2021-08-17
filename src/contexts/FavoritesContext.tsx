@@ -53,8 +53,6 @@ export const Favorites = ({ children }: IFavorites) => {
     [favorites]
   );
 
-  console.log(favorites);
-
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
   }, [favorites]);

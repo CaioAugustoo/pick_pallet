@@ -12,7 +12,6 @@ export const Header = styled.header`
   top: 0;
 
   background: var(--secondary-bg);
-  box-shadow: var(--secondary-shadow);
 
   nav {
     max-width: 180rem;

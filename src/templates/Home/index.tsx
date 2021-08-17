@@ -12,7 +12,7 @@ import * as S from "./styles";
 const HomeTemplate = () => {
   const [loading, setLoading] = useState(false);
   const [infinite, setInfinite] = useState(true);
-  const [total, setTotal] = useState(18);
+  const [total, setTotal] = useState(20);
   const [data, setData] = useState<IPallet[]>([]);
 
   const { url } = GET_ALL_PALLETS(total);
@@ -59,7 +59,7 @@ const HomeTemplate = () => {
     <>
       <Head title="Paletas" />
       <S.Wrapper>
-        <div className="left-side">
+        <div className="left">
           {data.map(
             ({
               id,
