@@ -28,6 +28,8 @@ export const BoxPallet = styled.div<IPallet>`
     animation-fill-mode: both;
 
     opacity: 0;
+
+    cursor: pointer;
   `}
 `;
 
@@ -41,6 +43,7 @@ export const Color = styled.p`
 
   padding: 5px 5px 1px 5px;
   border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 
   transition: all 0.3s ease;
 `;
@@ -59,20 +62,39 @@ export const PalletColors = styled.div<IPallet>`
 
       border-top-right-radius: 1rem;
       border-top-left-radius: 1rem;
+
+      &.small {
+        border-top-right-radius: 0.4rem;
+        border-top-left-radius: 0.4rem;
+        padding-top: 35%;
+      }
     }
 
     .pallet_2 {
       padding-top: 15%;
+
+      &.small {
+        padding-top: 20%;
+      }
     }
 
     .pallet_3,
     .pallet_4 {
       padding-top: 6%;
+
+      &.small {
+        padding-top: 15%;
+      }
     }
 
     .pallet_4 {
       border-bottom-right-radius: 1rem;
       border-bottom-left-radius: 1rem;
+
+      &.small {
+        border-bottom-right-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+      }
     }
 
     .pallet_1,
