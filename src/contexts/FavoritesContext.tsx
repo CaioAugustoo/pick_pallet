@@ -1,6 +1,7 @@
 import React, { createContext, useCallback, useEffect, useState } from "react";
 
 import { IPallet } from "components/Pallet";
+import { getItemStorage, setItemStorage } from "utils/localStorage";
 
 interface IContext {
   favorites: IPallet[];
@@ -13,18 +14,12 @@ interface IFavorites {
   children: React.ReactNode;
 }
 
-const STORAGE_KEY = "@pickpallet:favorites";
-
 export const FavoritesContext = createContext({} as IContext);
 
 export const Favorites = ({ children }: IFavorites) => {
   const [favorites, setFavorites] = useState<IPallet[]>(() => {
-    if (typeof window !== "undefined") {
-      const itensInStorage = localStorage.getItem(STORAGE_KEY);
-
-      if (!itensInStorage) return [];
-      return JSON.parse(itensInStorage);
-    }
+    const item = getItemStorage();
+    return item;
   });
 
   const isFavorited = useCallback(
@@ -38,9 +33,6 @@ export const Favorites = ({ children }: IFavorites) => {
 
   const saveAsFavorite = useCallback(
     (pallet: IPallet) => {
-      const alreadyFavorited = isFavorited(pallet.id);
-      if (alreadyFavorited) return;
-
       setFavorites(prev => [...prev, pallet]);
     },
     [favorites]
@@ -54,7 +46,7 @@ export const Favorites = ({ children }: IFavorites) => {
   );
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
+    setItemStorage(favorites);
   }, [favorites]);
 
   return (
