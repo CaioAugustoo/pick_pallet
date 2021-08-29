@@ -12,6 +12,10 @@ export function toastColor() {
   toast.success("Cor copiada!", styles);
 }
 
+export function toastLink() {
+  toast.success("Link copiado!", styles);
+}
+
 export function toastFavorited() {
   toast.success("Marcada como favorita!", styles);
 }
