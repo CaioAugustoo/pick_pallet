@@ -9,7 +9,7 @@ export const FavoritesWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  max-width: 20rem;
+  max-width: 30rem;
   max-height: 20rem;
   overflow-y: scroll;
 

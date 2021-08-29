@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
 
 export const BoxPallet = styled.div<IPallet>`
   ${({ small }) => css`
-    width: ${small ? "auto" : "28rem"};
+    width: ${small ? "auto" : "25rem"};
 
     border-radius: 0.5rem;
 

@@ -10,14 +10,14 @@ export const Wrapper = styled.aside`
 
 export const Title = styled.h4`
   font-size: 2rem;
-  max-width: 22rem;
+  max-width: 30rem;
   line-height: 1.3;
   font-weight: 500;
 `;
 
 export const Description = styled.p`
   font-size: 1.2rem;
-  max-width: 18rem;
+  max-width: 30rem;
   margin: 1rem 0;
 `;
 
