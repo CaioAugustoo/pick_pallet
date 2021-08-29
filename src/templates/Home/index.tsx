@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 import Pallet, { IPallet } from "components/Pallet";
-import Favorites from "components/Favorites";
 import Loader from "components/Helper/Loader";
 import Head from "components/Helper/Head";
+import Aside from "components/Aside";
 
 import { GET_ALL_PALLETS } from "services/api";
 
@@ -81,7 +81,7 @@ const HomeTemplate = () => {
             )
           )}
         </div>
-        <Favorites />
+        <Aside />
       </S.Wrapper>
       {loading && <Loader />}
     </>
