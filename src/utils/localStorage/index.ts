@@ -1,12 +1,15 @@
-const STORAGE_KEY = "@pickpallet:favorites";
+const STORAGE_KEY = "@pickpallet:";
 
-export function setItemStorage(value: string | any[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
+export function setItemStorage(
+  key: string = "favorites",
+  value: string | any[]
+) {
+  localStorage.setItem(`${STORAGE_KEY}${key}`, JSON.stringify(value));
 }
 
-export function getItemStorage() {
+export function getItemStorage(key: string = "favorites") {
   if (typeof window === "undefined") return;
-  const item = localStorage.getItem(STORAGE_KEY);
+  const item = localStorage.getItem(`${STORAGE_KEY}${key}`);
 
   if (!item) return [];
   return JSON.parse(item);
