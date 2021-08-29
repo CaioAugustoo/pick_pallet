@@ -1,4 +1,6 @@
+import Empty from "components/Empty";
 import Pallet from "components/Pallet";
+
 import { useFavorites } from "hooks/useFavorites";
 
 import * as S from "./styles";
@@ -9,9 +11,14 @@ const Favorites = () => {
   return (
     <S.Wrapper>
       <>
-        {favorites?.map(pallet => (
-          <Pallet key={pallet.id} {...pallet} />
-        ))}
+        {favorites?.length ? (
+          favorites?.map(pallet => <Pallet key={pallet.id} {...pallet} />)
+        ) : (
+          <Empty
+            title="Nenhuma paleta salva"
+            description="Você ainda não salvou paletas 😔"
+          />
+        )}
       </>
     </S.Wrapper>
   );
