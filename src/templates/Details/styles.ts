@@ -15,20 +15,22 @@ export const Wrapper = styled.div`
 `;
 
 export const BoxPallet = styled.div<IPallet>`
-  ${({ small }) => css`
-    width: ${small ? "auto" : "28rem"};
+  width: 60rem;
 
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
 
-    padding: ${small ? "0" : "20px 15px"};
-    margin: ${small ? "10px 0 0 0" : "10px"};
+  padding: 20px 15px;
+  margin: 7rem auto 0 auto;
 
-    transition: all 0.3s ease;
-    animation: ${item} 0.4s ease;
-    animation-fill-mode: both;
+  transition: all 0.3s ease;
+  animation: ${item} 0.4s ease;
+  animation-fill-mode: both;
 
-    opacity: 0;
-  `}
+  opacity: 0;
+
+  @media (max-width: 850px) {
+    width: auto;
+  }
 `;
 
 export const Color = styled.p`
@@ -46,46 +48,42 @@ export const Color = styled.p`
 `;
 
 export const PalletColors = styled.div<IPallet>`
-  ${({ small }) => css`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    border-radius: 4px;
+  border-radius: 4px;
 
-    width: ${small ? "5rem" : "auto"};
+  .pallet_1 {
+    padding-top: 40%;
 
-    .pallet_1 {
-      padding-top: 30%;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+  }
 
-      border-top-right-radius: 1rem;
-      border-top-left-radius: 1rem;
-    }
+  .pallet_2 {
+    padding-top: 20%;
+  }
 
-    .pallet_2 {
-      padding-top: 15%;
-    }
+  .pallet_3,
+  .pallet_4 {
+    padding-top: 10%;
+  }
 
-    .pallet_3,
-    .pallet_4 {
-      padding-top: 6%;
-    }
+  .pallet_4 {
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
 
-    .pallet_4 {
-      border-bottom-right-radius: 1rem;
-      border-bottom-left-radius: 1rem;
-    }
-
-    .pallet_1,
-    .pallet_2,
-    .pallet_3,
-    .pallet_4 {
-      &:hover {
-        ${Color} {
-          opacity: 1;
-        }
+  .pallet_1,
+  .pallet_2,
+  .pallet_3,
+  .pallet_4 {
+    &:hover {
+      ${Color} {
+        opacity: 1;
       }
     }
-  `}
+  }
 `;
 
 export const PostedAt = styled.p`
@@ -94,8 +92,15 @@ export const PostedAt = styled.p`
 
 export const Wrap = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   padding: 2rem 0;
+
+  button {
+    margin-right: 2rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
 `;

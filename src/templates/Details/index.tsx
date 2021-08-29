@@ -1,14 +1,19 @@
-import { useRouter } from "next/router";
-
 import Button from "components/Button";
 
 import copyToClipboard from "utils/copy_to_clipboard";
-import { toastColor, toastFavorited, toastRemovedFavorite } from "utils/toasts";
+import {
+  toastLink,
+  toastFavorited,
+  toastRemovedFavorite,
+  toastColor,
+} from "utils/toasts";
+import formatDate from "utils/formatters/format_date";
+
+import Others from "templates/Others";
 
 import { useFavorites } from "hooks/useFavorites";
 
 import * as S from "./styles";
-import Others from "templates/Others";
 
 export interface IDetails {
   id: number;
@@ -26,14 +31,19 @@ interface IOthers {
 }
 
 const Details = ({ data, otherPallets }: IOthers) => {
-  const { push } = useRouter();
   const { saveAsFavorite, isFavorited, removeAsFavorite } = useFavorites();
+  const formatedDate = formatDate(data.created_at);
 
-  const isSavedAsFavorite = isFavorited(200);
+  const isSavedAsFavorite = isFavorited(data.id);
 
   function handleCopyToClipBoardAndToast(palletColor: string): void {
     copyToClipboard(palletColor);
     toastColor();
+  }
+
+  function handleCopyLink(): void {
+    copyToClipboard(data.id, true);
+    toastLink();
   }
 
   function handleFavorite(): void {
@@ -44,10 +54,6 @@ const Details = ({ data, otherPallets }: IOthers) => {
   function handleRemoveAsFavorite(): void {
     removeAsFavorite(data.id);
     toastRemovedFavorite();
-  }
-
-  function handleNavigateToPallet() {
-    push(`/pallet/${data.id}`);
   }
 
   return (
@@ -89,7 +95,7 @@ const Details = ({ data, otherPallets }: IOthers) => {
             style={{ backgroundColor: `${data.pallet4}` }}
           >
             <S.Color
-              onClick={() => handleCopyToClipBoardAndToast(data.pallet3)}
+              onClick={() => handleCopyToClipBoardAndToast(data.pallet4)}
             >
               {data.pallet4}
             </S.Color>
@@ -98,11 +104,17 @@ const Details = ({ data, otherPallets }: IOthers) => {
 
         <S.Wrap>
           {isSavedAsFavorite ? (
-            <Button onClick={handleRemoveAsFavorite}>Salvo</Button>
+            <Button
+              onClick={handleRemoveAsFavorite}
+              favorited={isSavedAsFavorite}
+            >
+              Salvo
+            </Button>
           ) : (
             <Button onClick={handleFavorite}>Salvar</Button>
           )}
-          <Button onClick={handleNavigateToPallet}>Detalhes</Button>
+          <Button onClick={handleCopyLink}>Link</Button>
+          <p title={`Postada há ${formatedDate}`}>{formatedDate}</p>
         </S.Wrap>
       </S.BoxPallet>
 
