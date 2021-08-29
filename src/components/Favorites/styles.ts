@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.aside`
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+export const Title = styled.h4`
+  margin: 1rem 0;
+  font-weight: 500;
 `;
 
 export const FavoritesWrapper = styled.div`

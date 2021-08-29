@@ -10,14 +10,14 @@ const Favorites = () => {
   if (!favorites?.length) return null;
 
   return (
-    <S.Wrapper className="right">
-      <p>Favoritos</p>
+    <div className="right">
+      <S.Title>Favoritas</S.Title>
       <S.FavoritesWrapper>
         {favorites?.map(pallet => (
           <FavoritePallet key={pallet.id} {...pallet} />
         ))}
       </S.FavoritesWrapper>
-    </S.Wrapper>
+    </div>
   );
 };
 
