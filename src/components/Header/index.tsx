@@ -49,6 +49,16 @@ const Header = () => {
                 </a>
               </Link>
             </li>
+            <li>
+              <Link href="/favorites" passHref>
+                <a
+                  title="Paletas marcadas como favoritas"
+                  className={asPath === "/favorites" ? "active" : ""}
+                >
+                  Favoritas
+                </a>
+              </Link>
+            </li>
             <li onClick={changeTheme}>Alterar tema</li>
           </ul>
         </S.Menu>
