@@ -1,15 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-
-export const LOCALSTORAGE_NAME = "@pickpallet:THEME";
+import { getItemStorage, setItemStorage } from "utils/localStorage";
 
 const useTheme = () => {
   const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      const themeInLocalstorage = localStorage.getItem(LOCALSTORAGE_NAME);
+    const themeInLocalstorage = getItemStorage("theme");
 
-      if (!themeInLocalstorage) return "light";
-      return themeInLocalstorage;
-    }
+    if (!themeInLocalstorage) return "light";
+    return themeInLocalstorage;
   });
 
   const changeTheme = useCallback(() => {
@@ -17,7 +14,7 @@ const useTheme = () => {
   }, [theme]);
 
   useEffect(() => {
-    localStorage.setItem(LOCALSTORAGE_NAME, theme!);
+    setItemStorage("theme", theme);
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 

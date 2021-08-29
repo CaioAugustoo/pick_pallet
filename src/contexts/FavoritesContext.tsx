@@ -46,7 +46,7 @@ export const Favorites = ({ children }: IFavorites) => {
   );
 
   useEffect(() => {
-    setItemStorage(favorites);
+    setItemStorage("favorites", favorites);
   }, [favorites]);
 
   return (

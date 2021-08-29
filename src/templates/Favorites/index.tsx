@@ -12,7 +12,9 @@ const Favorites = () => {
     <S.Wrapper>
       <>
         {favorites?.length ? (
-          favorites?.map(pallet => <Pallet key={pallet.id} {...pallet} />)
+          favorites
+            ?.reverse()
+            ?.map(pallet => <Pallet key={pallet.id} {...pallet} />)
         ) : (
           <Empty
             title="Nenhuma paleta salva"
