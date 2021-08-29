@@ -12,7 +12,7 @@ const Favorites = () => {
   if (!favorites?.length) return null;
 
   return (
-    <div className="right">
+    <>
       <S.Wrapper>
         <S.Title>Favoritas</S.Title>
         <Link href="/favorites" passHref>
@@ -24,7 +24,7 @@ const Favorites = () => {
           <FavoritePallet key={pallet.id} {...pallet} />
         ))}
       </S.FavoritesWrapper>
-    </div>
+    </>
   );
 };
 

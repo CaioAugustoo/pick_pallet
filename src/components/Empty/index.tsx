@@ -5,11 +5,14 @@ import Button from "components/Button";
 import * as S from "./styles";
 
 export type EmptyProps = {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 };
 
-const Empty = ({ title, description }: EmptyProps) => {
+const Empty = ({
+  title = "Nenhuma paleta salva",
+  description = "Você ainda não salvou paletas 😔",
+}: EmptyProps) => {
   return (
     <S.Wrapper>
       <S.Title>{title}</S.Title>
