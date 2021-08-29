@@ -13,6 +13,8 @@ export const Header = styled.header`
 
   background: var(--secondary-bg);
 
+  border-bottom: 1px solid var(--border);
+
   nav {
     max-width: 180rem;
     margin: 0 auto;
@@ -50,17 +52,17 @@ export const Menu = styled.div<MenuProps>`
 
   box-shadow: var(--secondary-shadow);
   position: fixed;
-  right: 0;
-  top: 6rem;
+  right: 1rem;
+  top: 6.5rem;
 
   z-index: 2;
   padding: 1rem 2rem;
 
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-
   width: 13rem;
   transition: opacity 0.1s ease;
+
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
 
   @media (min-width: 18.75rem) and (max-width: 25rem) {
     right: 0.9375rem;
