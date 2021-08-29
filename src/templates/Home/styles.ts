@@ -2,7 +2,21 @@ import styled from "styled-components";
 
 export const Wrapper = styled.main`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 75px 0px 15px;
+  max-width: 185rem;
+  padding: 5rem 0rem 5rem 0rem;
+  margin: 0 auto;
+
+  @media (max-width: 850px) {
+    padding: 7rem 0rem 5rem 0rem;
+  }
+
+  .left {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @media (max-width: 850px) {
+      justify-content: center;
+    }
+  }
 `;

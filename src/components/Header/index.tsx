@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import useTheme from "hooks/useTheme";
+import useOutsideclick from "hooks/useOutsideclick";
 
 import * as S from "./styles";
 
@@ -11,6 +12,9 @@ const Header = () => {
   const [active, setActive] = useState(false);
   const [changeTheme] = useTheme();
   const { asPath, pathname } = useRouter();
+  const menuRef = useRef(null);
+
+  useOutsideclick(menuRef, () => setActive(false));
 
   useEffect(() => {
     setActive(false);
@@ -27,7 +31,7 @@ const Header = () => {
 
         <S.MenuIcon onClick={() => setActive(prev => !prev)}>•••</S.MenuIcon>
 
-        <S.Menu active={active}>
+        <S.Menu active={active} ref={menuRef}>
           <ul>
             <li>
               <Link href="/" passHref>
@@ -46,6 +50,16 @@ const Header = () => {
                   className={asPath === "/create" ? "active" : ""}
                 >
                   Criar
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/favorites" passHref>
+                <a
+                  title="Paletas marcadas como favoritas"
+                  className={asPath === "/favorites" ? "active" : ""}
+                >
+                  Favoritas
                 </a>
               </Link>
             </li>

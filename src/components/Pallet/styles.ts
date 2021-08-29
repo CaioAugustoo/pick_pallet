@@ -1,5 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
 import { item } from "styles/keyframes";
+
+interface IPallet {
+  small?: boolean;
+  big?: boolean;
+}
 
 export const Wrapper = styled.div`
   display: flex;
@@ -9,122 +15,127 @@ export const Wrapper = styled.div`
   padding: 0.75rem 0 1.5rem 0;
 `;
 
-export const BoxPallet = styled.div`
-  width: 23rem;
-  height: 28rem;
+export const BoxPallet = styled.div<IPallet>`
+  ${({ small }) => css`
+    width: ${small ? "auto" : "25rem"};
 
-  box-shadow: var(--box-shadow);
-  border-radius: 0.5rem;
-  background-color: var(--secondary-bg);
+    border-radius: 0.5rem;
 
-  padding: 20px 15px;
-  margin: 10px;
+    padding: ${small ? "0" : "20px 15px"};
+    margin: ${small ? "10px 0 0 0" : "10px"};
 
-  transition: all 0.3s ease;
-  animation: ${item} 0.4s ease;
-  animation-fill-mode: both;
+    transition: all 0.3s ease;
+    animation: ${item} 0.4s ease;
+    animation-fill-mode: both;
 
-  opacity: 0;
+    opacity: 0;
 
-  @media (min-width: 300px) and (max-width: 500px) {
-    opacity: 1;
+    cursor: pointer;
 
-    width: 13rem;
-    height: 16rem;
-  }
-
-  @media (max-width: 500px) {
-    .pallet__date {
-      display: none;
+    @media (max-width: 850px) {
+      width: 15rem;
+      padding: 0;
     }
-  }
-
+  `}
 `;
 
-export const PalletColors = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Color = styled.p`
+  cursor: pointer;
+  opacity: 0;
 
-  height: 250px;
-  border-radius: 4px;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  display: inline;
 
-  @media (min-width: 300px) and (max-width: 500px) {
-    height: auto;
-  }
+  padding: 5px 5px 1px 5px;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 
-  div {
-    height: 5.0rem;
-    position: relative;
+  transition: all 0.3s ease;
+`;
 
-    @media (min-width: 300px) and (max-width: 500px) {
-      height: 3.4rem;
-    }
+export const PalletColors = styled.div<IPallet>`
+  ${({ small }) => css`
+    display: flex;
+    flex-direction: column;
 
-    &:first-child {
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      height: 100px;
+    border-radius: 4px;
 
-      @media (min-width: 300px) and (max-width: 500px) {
-        height: 4.8rem;
+    width: ${small ? "5rem" : "auto"};
+
+    .pallet_1 {
+      padding-top: 30%;
+
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+
+      @media (max-width: 850px) {
+        padding-top: 15%;
       }
 
-    }
-    &:last-child {
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
-
-      height: 3.5rem;
-
-      @media (min-width: 300px) and (max-width: 500px) {
-        height: 2rem;
+      &.small {
+        border-top-right-radius: 0.4rem;
+        border-top-left-radius: 0.4rem;
+        padding-top: 35%;
       }
     }
-    
-    p {
-      position: absolute;
-      bottom: 0;
 
-      opacity: 0;
+    .pallet_2 {
+      padding-top: 15%;
 
-      text-transform: uppercase;
-      color: white;
+      @media (max-width: 850px) {
+        padding-top: 10%;
+      }
 
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      padding: 2px 0px 0 0px;
-      
-      @media (min-width: 300px) and (max-width: 500px) {
-        font-size: 1.2rem;
+      &.small {
+        padding-top: 20%;
       }
     }
-    &:hover {
-      p {
-        opacity: 1;
-        background: rgba(0, 0, 0, 0.2);
-        padding: 2px 5px 0 5px;
-        border-radius: 0 2px 2px 0px;
+
+    .pallet_3,
+    .pallet_4 {
+      padding-top: 6%;
+
+      @media (max-width: 850px) {
+        padding-top: 4%;
+      }
+
+      &.small {
+        padding-top: 15%;
       }
     }
-  }
+
+    .pallet_4 {
+      border-bottom-right-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+
+      &.small {
+        border-bottom-right-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+      }
+    }
+
+    .pallet_1,
+    .pallet_2,
+    .pallet_3,
+    .pallet_4 {
+      &:hover {
+        ${Color} {
+          opacity: 1;
+        }
+      }
+    }
+  `}
 `;
 
 export const PostedAt = styled.p`
   font-size: 1.28rem;
-  
-  @media (min-width: 300px) and (max-width: 1200px) {
-    font-size: 1.2rem;
-  }
 `;
 
 export const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  @media (max-width: 500px) {
-    justify-content: center;
-    margin-top: 7px;
-  }
+
+  padding: 2rem 0;
 `;

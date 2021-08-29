@@ -1,4 +1,5 @@
 import NextNprogress from "nextjs-progressbar";
+import { Toaster } from "react-hot-toast";
 
 import Global from "../src/styles/global";
 
@@ -6,9 +7,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 
 import Header from "components/Header";
-import Toast from "components/Toast";
-
-import { ToastProvider } from "contexts/Toast";
+import { Favorites } from "contexts/FavoritesContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -41,10 +40,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         height={5}
       />
       <Header />
-      <ToastProvider>
+      <Toaster position="bottom-center" />
+      <Favorites>
         <Component {...pageProps} />
-        <Toast />
-      </ToastProvider>
+      </Favorites>
       <Global />
     </>
   );

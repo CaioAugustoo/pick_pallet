@@ -9,6 +9,7 @@ export default createGlobalStyle`
     --loader: #000000;
     --toast-bg: #FFFFFF;
     --toast-text: #000000;
+    --liked: #EFEFEF;
     
     
     --box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
@@ -18,13 +19,12 @@ export default createGlobalStyle`
   :root[data-theme="dark"] {
     --primary-bg: #16161A;
     --secondary-bg: #121215;
-    --border: #151519;
+    --border: #2b2b2e;
     --primary-color: #f3f3f4;
     --loader: #ffffff;
-
-
     --toast-bg: #292930;
     --toast-text: #ffffff;
+    --liked: #27272c;
     
     --box-shadow: 0 10px 40px -10px rgba(0,0,0, 0.1);
     --secondary-shadow: 0 5px 10px 0 rgba(0,0,0,.05);
