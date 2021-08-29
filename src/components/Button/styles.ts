@@ -20,7 +20,7 @@ export const Button = styled.button<Pick<ButtonProps, "favorited">>`
 
     @media (min-width: 18.75rem) and (max-width: 75rem) {
       line-height: 2rem;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
 
       padding: 0.4rem 0.7rem;
     }

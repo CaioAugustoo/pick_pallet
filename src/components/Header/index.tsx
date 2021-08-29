@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import useTheme from "hooks/useTheme";
+import useOutsideclick from "hooks/useOutsideclick";
 
 import * as S from "./styles";
-import useOutsideclick from "hooks/useOutsideclick";
 
 const Header = () => {
   const [active, setActive] = useState(false);

@@ -4,6 +4,7 @@ import { item } from "styles/keyframes";
 
 interface IPallet {
   small?: boolean;
+  big?: boolean;
 }
 
 export const Wrapper = styled.div`
