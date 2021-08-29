@@ -7,7 +7,6 @@ export const Aside = styled.aside`
 `;
 
 export const Wrapper = styled.div`
-  position: -webkit-sticky;
   position: sticky;
 
   margin-top: 2.6rem;

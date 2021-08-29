@@ -8,20 +8,15 @@ import * as S from "./styles";
 const Favorites = () => {
   const { favorites } = useFavorites();
 
+  if (!favorites.length) return <Empty />;
+
   return (
     <S.Wrapper>
-      <>
-        {favorites?.length ? (
-          favorites
-            ?.reverse()
-            ?.map(pallet => <Pallet key={pallet.id} {...pallet} />)
-        ) : (
-          <Empty
-            title="Nenhuma paleta salva"
-            description="Você ainda não salvou paletas 😔"
-          />
-        )}
-      </>
+      {favorites?.map(pallet => (
+        <div key={pallet.id}>
+          <Pallet {...pallet} />
+        </div>
+      ))}
     </S.Wrapper>
   );
 };

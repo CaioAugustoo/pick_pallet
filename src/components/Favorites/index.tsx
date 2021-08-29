@@ -9,10 +9,10 @@ import * as S from "./styles";
 const Favorites = () => {
   const { favorites } = useFavorites();
 
-  if (!favorites?.length) return null;
+  if (!favorites?.length) return <div></div>;
 
   return (
-    <div className="right">
+    <>
       <S.Wrapper>
         <S.Title>Favoritas</S.Title>
         <Link href="/favorites" passHref>
@@ -24,7 +24,7 @@ const Favorites = () => {
           <FavoritePallet key={pallet.id} {...pallet} />
         ))}
       </S.FavoritesWrapper>
-    </div>
+    </>
   );
 };
 
