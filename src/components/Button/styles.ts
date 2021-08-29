@@ -11,7 +11,7 @@ export const Button = styled.button<Pick<ButtonProps, "favorited">>`
     font-family: "Poppins";
     line-height: 2.25rem;
 
-    background: ${favorited ? "#EFEFEF" : "var(--primary-bg)"};
+    background: ${favorited ? "var(--liked)" : "var(--primary-bg)"};
     color: var(--primary);
     transition: all 0.3s ease;
 
