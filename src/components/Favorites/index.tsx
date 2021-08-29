@@ -9,7 +9,7 @@ import * as S from "./styles";
 const Favorites = () => {
   const { favorites } = useFavorites();
 
-  if (!favorites?.length) return <div></div>;
+  if (!favorites?.length) return null;
 
   return (
     <>
