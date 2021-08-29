@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import toast from "react-hot-toast";
 
 import Button from "components/Button";
 
@@ -93,7 +92,9 @@ const Pallet = (data: IPallet) => {
 
         <S.Wrap>
           {isSavedAsFavorite ? (
-            <Button onClick={handleRemoveAsFavorite}>Salvo</Button>
+            <Button onClick={handleRemoveAsFavorite} favorited>
+              Salvo
+            </Button>
           ) : (
             <Button onClick={handleFavorite}>Salvar</Button>
           )}

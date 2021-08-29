@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.aside`
+export const Aside = styled.aside`
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+
+export const Wrapper = styled.div`
   position: -webkit-sticky;
   position: sticky;
 
   margin-top: 2.6rem;
   top: 8rem;
+
+  padding: 0 15px;
 `;
 
 export const Title = styled.h4`

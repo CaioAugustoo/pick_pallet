@@ -3,16 +3,16 @@ import * as S from "./styles";
 
 const Aside = () => {
   return (
-    <aside>
+    <S.Aside>
       <S.Wrapper>
-        <S.Title>As paletas mais bonitas</S.Title>
+        <S.Title>As paletas mais fantásticas</S.Title>
         <S.Description>
           Descubra as melhores paletas criadas pela nossa comunidade.
         </S.Description>
         <S.Line />
         <Favorites />
       </S.Wrapper>
-    </aside>
+    </S.Aside>
   );
 };
 

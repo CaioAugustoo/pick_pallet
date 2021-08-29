@@ -30,6 +30,11 @@ export const BoxPallet = styled.div<IPallet>`
     opacity: 0;
 
     cursor: pointer;
+
+    @media (max-width: 850px) {
+      width: 15rem;
+      padding: 0;
+    }
   `}
 `;
 
@@ -63,6 +68,10 @@ export const PalletColors = styled.div<IPallet>`
       border-top-right-radius: 1rem;
       border-top-left-radius: 1rem;
 
+      @media (max-width: 850px) {
+        padding-top: 15%;
+      }
+
       &.small {
         border-top-right-radius: 0.4rem;
         border-top-left-radius: 0.4rem;
@@ -73,6 +82,10 @@ export const PalletColors = styled.div<IPallet>`
     .pallet_2 {
       padding-top: 15%;
 
+      @media (max-width: 850px) {
+        padding-top: 10%;
+      }
+
       &.small {
         padding-top: 20%;
       }
@@ -81,6 +94,10 @@ export const PalletColors = styled.div<IPallet>`
     .pallet_3,
     .pallet_4 {
       padding-top: 6%;
+
+      @media (max-width: 850px) {
+        padding-top: 4%;
+      }
 
       &.small {
         padding-top: 15%;
