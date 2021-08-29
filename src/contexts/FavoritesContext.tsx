@@ -19,6 +19,7 @@ export const FavoritesContext = createContext({} as IContext);
 export const Favorites = ({ children }: IFavorites) => {
   const [favorites, setFavorites] = useState<IPallet[]>(() => {
     const item = getItemStorage();
+    if (!item) return [];
     return item;
   });
 

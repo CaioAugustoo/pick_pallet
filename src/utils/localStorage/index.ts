@@ -11,6 +11,6 @@ export function getItemStorage(key: string = "favorites") {
   if (typeof window === "undefined") return;
   const item = localStorage.getItem(`${STORAGE_KEY}${key}`);
 
-  if (!item) return [];
+  if (!item) return null;
   return JSON.parse(item);
 }
