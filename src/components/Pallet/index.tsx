@@ -83,7 +83,7 @@ const Pallet = (data: IPallet) => {
             style={{ backgroundColor: `${data.pallet4}` }}
           >
             <S.Color
-              onClick={() => handleCopyToClipBoardAndToast(data.pallet3)}
+              onClick={() => handleCopyToClipBoardAndToast(data.pallet4)}
             >
               {data.pallet4}
             </S.Color>
