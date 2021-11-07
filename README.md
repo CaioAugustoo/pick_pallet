@@ -9,8 +9,7 @@ Este projeto consiste em uma web app que lista centenas de paletas. Inspirado no
 Veja abaixo uma foto do projeto.
 [![Image from Gyazo](https://i.gyazo.com/e384e2cde4c0fdd153b4feca0b22d5e7.png)](https://gyazo.com/e384e2cde4c0fdd153b4feca0b22d5e7)
 
-Você pode conferir o resultado final em: https://pick-pallet.vercel.app/
-
+Você pode conferir o resultado final em: https://pickpallet.caioaugusto.dev/
 
 ## 🎯 Objetivo do projeto
 Este projeto foi desenvolvido para aqueles designers que não sabem onde encontrar paletas para seus respectivos projetos. Além disso, foi desenvolvido para aperfeiçoar os
