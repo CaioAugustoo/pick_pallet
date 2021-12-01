@@ -1,0 +1,3 @@
+- [x] Adicionar shimmer effect no loading de paletas
+- [ ] Tornar o detalhe de uma paleta uma página estática (pelo menos o detalhe das primeiras paletas, ainda vou definir melhor)
+- [x] Adicionar git-commit-msg-linter pra padronizar commits

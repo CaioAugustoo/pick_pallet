@@ -1,10 +1,11 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 import { item } from "styles/keyframes";
 
 interface IPallet {
   small?: boolean;
   big?: boolean;
+  empty?: boolean;
 }
 
 export const Wrapper = styled.div`
@@ -52,6 +53,18 @@ export const Color = styled.p`
   border-bottom-left-radius: 1rem;
 
   transition: all 0.3s ease;
+`;
+
+const Gradient = keyframes`
+  0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 `;
 
 export const PalletColors = styled.div<IPallet>`
@@ -126,6 +139,22 @@ export const PalletColors = styled.div<IPallet>`
       }
     }
   `}
+  ${({ empty }) =>
+    empty &&
+    css`
+      .pallet_1,
+      .pallet_2,
+      .pallet_3,
+      .pallet_4 {
+        background: linear-gradient(-75deg, #707b7c, #b2babb, #7f8c8d, #ccd1d1);
+        background-size: 400% 400%;
+        animation: ${Gradient} 5s ease infinite;
+
+        span {
+          padding: 5px 5px 1px 5px;
+        }
+      }
+    `}
 `;
 
 export const PostedAt = styled.p`
