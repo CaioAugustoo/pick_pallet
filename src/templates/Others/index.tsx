@@ -10,7 +10,7 @@ const Others = ({ otherPallets }: IOthers) => {
   return (
     <S.Wrapper>
       {otherPallets.map(pallet => (
-        <Pallet key={pallet.id} {...pallet} />
+        <Pallet key={pallet.id} pallet={pallet} />
       ))}
     </S.Wrapper>
   );
