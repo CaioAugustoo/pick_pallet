@@ -12,9 +12,9 @@ const Favorites = () => {
 
   return (
     <S.Wrapper>
-      {favorites?.map(pallet => (
+      {favorites?.map((pallet) => (
         <div key={pallet.id}>
-          <Pallet {...pallet} />
+          <Pallet pallet={pallet} />
         </div>
       ))}
     </S.Wrapper>

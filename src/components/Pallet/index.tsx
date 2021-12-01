@@ -8,6 +8,7 @@ import { toastColor, toastFavorited, toastRemovedFavorite } from "utils/toasts";
 import { useFavorites } from "hooks/useFavorites";
 
 import * as S from "./styles";
+import EmptyPallet from "./empty";
 
 export interface IPallet {
   id: number;
@@ -16,14 +17,21 @@ export interface IPallet {
   pallet2: string;
   pallet3: string;
   pallet4: string;
-  onClick?: () => void;
 }
 
-const Pallet = (data: IPallet) => {
+export interface CompoundedPallet extends React.FunctionComponent<PalletProps> {
+  Empty: React.FunctionComponent;
+}
+
+export interface PalletProps {
+  pallet: IPallet;
+}
+
+const Pallet: CompoundedPallet = ({ pallet }: PalletProps) => {
   const { push } = useRouter();
   const { saveAsFavorite, isFavorited, removeAsFavorite } = useFavorites();
 
-  const isSavedAsFavorite = isFavorited(data.id);
+  const isSavedAsFavorite = isFavorited(pallet.id);
 
   function handleCopyToClipBoardAndToast(palletColor: string): void {
     copyToClipboard(palletColor);
@@ -31,78 +39,78 @@ const Pallet = (data: IPallet) => {
   }
 
   function handleFavorite(): void {
-    saveAsFavorite(data);
+    saveAsFavorite(pallet);
     toastFavorited();
   }
 
   function handleRemoveAsFavorite(): void {
-    removeAsFavorite(data.id);
+    removeAsFavorite(pallet.id);
     toastRemovedFavorite();
   }
 
   function handleNavigateToPallet() {
-    push(`/pallet/${data.id}`);
+    push(`/pallet/${pallet.id}`);
   }
 
   return (
-    <>
-      <S.BoxPallet>
-        <S.PalletColors>
-          <div
-            className="pallet_1"
-            style={{ backgroundColor: `${data.pallet1}` }}
+    <S.BoxPallet>
+      <S.PalletColors>
+        <div
+          className="pallet_1"
+          style={{ backgroundColor: `${pallet.pallet1}` }}
+        >
+          <S.Color
+            onClick={() => handleCopyToClipBoardAndToast(pallet.pallet1)}
           >
-            <S.Color
-              onClick={() => handleCopyToClipBoardAndToast(data.pallet1)}
-            >
-              {data.pallet1}
-            </S.Color>
-          </div>
-          <div
-            className="pallet_2"
-            style={{ backgroundColor: `${data.pallet2}` }}
+            {pallet.pallet1}
+          </S.Color>
+        </div>
+        <div
+          className="pallet_2"
+          style={{ backgroundColor: `${pallet.pallet2}` }}
+        >
+          <S.Color
+            onClick={() => handleCopyToClipBoardAndToast(pallet.pallet2)}
           >
-            <S.Color
-              onClick={() => handleCopyToClipBoardAndToast(data.pallet2)}
-            >
-              {data.pallet2}
-            </S.Color>
-          </div>
-          <div
-            className="pallet_3"
-            style={{ backgroundColor: `${data.pallet3}` }}
+            {pallet.pallet2}
+          </S.Color>
+        </div>
+        <div
+          className="pallet_3"
+          style={{ backgroundColor: `${pallet.pallet3}` }}
+        >
+          <S.Color
+            onClick={() => handleCopyToClipBoardAndToast(pallet.pallet3)}
           >
-            <S.Color
-              onClick={() => handleCopyToClipBoardAndToast(data.pallet3)}
-            >
-              {data.pallet3}
-            </S.Color>
-          </div>
-          <div
-            className="pallet_4"
-            style={{ backgroundColor: `${data.pallet4}` }}
+            {pallet.pallet3}
+          </S.Color>
+        </div>
+        <div
+          className="pallet_4"
+          style={{ backgroundColor: `${pallet.pallet4}` }}
+        >
+          <S.Color
+            onClick={() => handleCopyToClipBoardAndToast(pallet.pallet4)}
           >
-            <S.Color
-              onClick={() => handleCopyToClipBoardAndToast(data.pallet4)}
-            >
-              {data.pallet4}
-            </S.Color>
-          </div>
-        </S.PalletColors>
+            {pallet.pallet4}
+          </S.Color>
+        </div>
+      </S.PalletColors>
 
-        <S.Wrap>
-          {isSavedAsFavorite ? (
-            <Button onClick={handleRemoveAsFavorite} favorited>
-              Salvo
-            </Button>
-          ) : (
-            <Button onClick={handleFavorite}>Salvar</Button>
-          )}
-          <Button onClick={handleNavigateToPallet}>Detalhes</Button>
-        </S.Wrap>
-      </S.BoxPallet>
-    </>
+      <S.Wrap>
+        {isSavedAsFavorite ? (
+          <Button onClick={handleRemoveAsFavorite} favorited>
+            Salvo
+          </Button>
+        ) : (
+          <Button onClick={handleFavorite}>Salvar</Button>
+        )}
+        <Button onClick={handleNavigateToPallet}>Detalhes</Button>
+      </S.Wrap>
+    </S.BoxPallet>
   );
 };
+
+Pallet.Empty = EmptyPallet;
 
 export default Pallet;

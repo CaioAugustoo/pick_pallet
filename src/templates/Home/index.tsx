@@ -37,13 +37,12 @@ const HomeTemplate = () => {
       <Head title="Paletas" />
       <S.Wrapper>
         <div className="left">
-          {data?.map(pallet => (
-            <Pallet key={pallet.id} {...pallet} />
-          ))}
+          {loading
+            ? [1, 2, 3, 4, 5].map((i) => <Pallet.Empty key={i} />)
+            : data.map((pallet) => <Pallet key={pallet.id} pallet={pallet} />)}
         </div>
         <Aside />
       </S.Wrapper>
-      {loading && <Loader />}
     </>
   );
 };
