@@ -23,6 +23,7 @@ Para a realização desse projeto foram utilizadas as seguintes tecnologias/ling
 - [date-fns](https://date-fns.org/)
 - [react-hot-toast](https://react-hot-toast.com/)
 - [Next.js Progressbar](https://www.npmjs.com/package/nextjs-progressbar)
+- [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter)
 
 ## ⚙️ Instalação
 Para que este rode em sua máquina, siga os passos abaixo:
