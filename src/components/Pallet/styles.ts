@@ -146,7 +146,13 @@ export const PalletColors = styled.div<IPallet>`
       .pallet_2,
       .pallet_3,
       .pallet_4 {
-        background: linear-gradient(-75deg, #707b7c, #b2babb, #7f8c8d, #ccd1d1);
+        background: linear-gradient(
+          -75deg,
+          var(--shimmer-primary),
+          var(--shimmer-secondary),
+          var(--shimmer-primary),
+          var(--shimmer-secondary)
+        );
         background-size: 400% 400%;
         animation: ${Gradient} 5s ease infinite;
 

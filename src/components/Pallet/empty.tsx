@@ -1,10 +1,10 @@
 import * as S from "./styles";
 
-const EmptyPallet: React.FC = () => {
+const EmptyPallet = () => {
   return (
     <S.BoxPallet>
       <S.PalletColors empty>
-        {[1, 2, 3, 4].map((i) => (
+        {[1, 2, 3, 4].map(i => (
           <div key={i} className={`pallet_${i}`}>
             <span />
           </div>

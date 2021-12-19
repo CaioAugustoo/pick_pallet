@@ -1,14 +1,15 @@
+import { useCallback } from "react";
+
 import { useRouter } from "next/router";
 
 import Button from "components/Button";
 
 import copyToClipboard from "utils/copy_to_clipboard";
-import { toastColor, toastFavorited, toastRemovedFavorite } from "utils/toasts";
+import { makeToast } from "utils/toasts";
 
 import { useFavorites } from "hooks/useFavorites";
 
 import * as S from "./styles";
-import EmptyPallet from "./empty";
 
 export interface IPallet {
   id: number;
@@ -19,34 +20,30 @@ export interface IPallet {
   pallet4: string;
 }
 
-export interface CompoundedPallet extends React.FunctionComponent<PalletProps> {
-  Empty: React.FunctionComponent;
-}
-
 export interface PalletProps {
   pallet: IPallet;
 }
 
-const Pallet: CompoundedPallet = ({ pallet }: PalletProps) => {
+const Pallet = ({ pallet }: PalletProps) => {
   const { push } = useRouter();
   const { saveAsFavorite, isFavorited, removeAsFavorite } = useFavorites();
 
   const isSavedAsFavorite = isFavorited(pallet.id);
 
-  function handleCopyToClipBoardAndToast(palletColor: string): void {
+  const handleCopyToClipBoardAndToast = useCallback((palletColor: string) => {
     copyToClipboard(palletColor);
-    toastColor();
-  }
+    makeToast("Cor copiada!");
+  }, []);
 
-  function handleFavorite(): void {
+  const handleFavorite = useCallback(() => {
     saveAsFavorite(pallet);
-    toastFavorited();
-  }
+    makeToast("Salva como favorita!");
+  }, []);
 
-  function handleRemoveAsFavorite(): void {
+  const handleRemoveAsFavorite = useCallback(() => {
     removeAsFavorite(pallet.id);
-    toastRemovedFavorite();
-  }
+    makeToast("Removida como favorita!");
+  }, []);
 
   function handleNavigateToPallet() {
     push(`/pallet/${pallet.id}`);
@@ -110,7 +107,5 @@ const Pallet: CompoundedPallet = ({ pallet }: PalletProps) => {
     </S.BoxPallet>
   );
 };
-
-Pallet.Empty = EmptyPallet;
 
 export default Pallet;

@@ -10,9 +10,11 @@ const useInfiniteScroll = () => {
       if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
+
         if (scroll > height * 0.85 && !wait) {
           setTotal((total: number) => total + 18);
           wait = true;
+
           setTimeout(() => {
             wait = false;
           }, 500);
@@ -22,6 +24,7 @@ const useInfiniteScroll = () => {
 
     window.addEventListener("wheel", infiniteScroll);
     window.addEventListener("scroll", infiniteScroll);
+
     return () => {
       window.removeEventListener("wheel", infiniteScroll);
       window.removeEventListener("scroll", infiniteScroll);
