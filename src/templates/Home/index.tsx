@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 import Pallet, { IPallet } from "components/Pallet";
-import Loader from "components/Helper/Loader";
 import Head from "components/Helper/Head";
 import Aside from "components/Aside";
+import EmptyPallet from "components/Pallet/empty";
 
 import useInfiniteScroll from "hooks/useInfiniteScroll";
 
@@ -26,7 +26,7 @@ const HomeTemplate = () => {
       const json = await response.json();
 
       setData(json);
-      setLoading(false);
+      setLoading(true);
 
       if (response.ok && json.length < total) setInfinite(false);
     })();
@@ -37,10 +37,10 @@ const HomeTemplate = () => {
       <Head title="Paletas" />
       <S.Wrapper>
         <div className="left">
-          {data.length > 0 &&
-            data.map((pallet) => <Pallet key={pallet.id} pallet={pallet} />)}
+          {!!data.length &&
+            data.map(pallet => <Pallet key={pallet.id} pallet={pallet} />)}
 
-          {loading && [1, 2, 3, 4, 5].map((i) => <Pallet.Empty key={i} />)}
+          {loading && [1, 2, 3, 4, 5].map(i => <EmptyPallet key={i} />)}
         </div>
         <Aside />
       </S.Wrapper>

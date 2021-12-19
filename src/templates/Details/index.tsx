@@ -1,13 +1,8 @@
 import Button from "components/Button";
 
 import copyToClipboard from "utils/copy_to_clipboard";
-import {
-  toastLink,
-  toastFavorited,
-  toastRemovedFavorite,
-  toastColor,
-} from "utils/toasts";
-import formatDate from "utils/formatters/format_date";
+import { makeToast } from "utils/toasts";
+import formatDate from "utils/formatters/date";
 
 import Others from "templates/Others";
 
@@ -38,22 +33,22 @@ const Details = ({ data, otherPallets }: IOthers) => {
 
   function handleCopyToClipBoardAndToast(palletColor: string): void {
     copyToClipboard(palletColor);
-    toastColor();
+    makeToast();
   }
 
   function handleCopyLink(): void {
     copyToClipboard(data.id, true);
-    toastLink();
+    makeToast("Link Copiado!");
   }
 
   function handleFavorite(): void {
     saveAsFavorite(data);
-    toastFavorited();
+    makeToast("Marcada como favorita!");
   }
 
   function handleRemoveAsFavorite(): void {
     removeAsFavorite(data.id);
-    toastRemovedFavorite();
+    makeToast("Removida como favorita!");
   }
 
   return (
