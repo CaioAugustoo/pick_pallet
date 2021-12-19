@@ -8,10 +8,11 @@ export type InputProps = {
 const Input = ({ onChange, value, ...rest }: InputProps) => {
   return (
     <S.Input
-      onChange={onChange!}
+      onChange={onChange}
       type="color"
       name="color"
       id="color"
+      value={value}
       {...rest}
     />
   );
