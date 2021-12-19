@@ -26,7 +26,7 @@ const HomeTemplate = () => {
       const json = await response.json();
 
       setData(json);
-      setLoading(true);
+      setLoading(false);
 
       if (response.ok && json.length < total) setInfinite(false);
     })();
