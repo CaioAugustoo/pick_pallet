@@ -10,6 +10,8 @@ export default createGlobalStyle`
     --toast-bg: #FFFFFF;
     --toast-text: #000000;
     --liked: #EFEFEF;
+    --shimmer-primary: #E3E3E3;
+    --shimmer-secondary: #FFF;
     
     
     --box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
@@ -25,6 +27,8 @@ export default createGlobalStyle`
     --toast-bg: #292930;
     --toast-text: #ffffff;
     --liked: #27272c;
+    --shimmer-primary: #292930;
+    --shimmer-secondary: #191a1c;
     
     --box-shadow: 0 10px 40px -10px rgba(0,0,0, 0.1);
     --secondary-shadow: 0 5px 10px 0 rgba(0,0,0,.05);
